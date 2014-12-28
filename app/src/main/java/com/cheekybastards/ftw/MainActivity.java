@@ -25,7 +25,7 @@ import android.widget.ListView;
 import com.cheekybastards.ftw.fragments.*;
 import com.cheekybastards.ftw.adapter.*;
 import com.cheekybastards.ftw.model.*;
-import com.cheekybastards.ftw.settings.*;;
+import com.cheekybastards.ftw.settings.*;
 
 import java.util.ArrayList;
 
