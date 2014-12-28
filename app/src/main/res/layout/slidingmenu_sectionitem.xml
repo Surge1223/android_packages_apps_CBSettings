@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/slidingmenu_list_selector_background"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/slidingmenu_sectionitem_icon"
+        android:paddingLeft="15.0dip"
+        android:layout_width="wrap_content"
+        android:layout_height="30.0dip"
+        android:layout_centerVertical="true" />
+    <TextView android:textColor="#ffffffff"
+        android:gravity=
+        "center_vertical" android:id="@id/slidingmenu_sectionitem_label"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:text="TextView"
+        android:layout_toRightOf="@id/slidingmenu_sectionitem_icon" />
+</RelativeLayout>

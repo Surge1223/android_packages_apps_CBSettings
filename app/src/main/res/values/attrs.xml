@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <!-- attr name="colorPickerPreferenceStyle" format="reference" / -->
+    <declare-styleable name="FloatingActionButton">
+        <attr name="fab_colorPressed" format="color" />
+        <attr name="fab_colorNormal" format="color" />
+        <attr name="fab_colorRipple" format="color" />
+        <attr name="fab_shadow" format="boolean" />
+    </declare-styleable>
+<attr name="textTitle" format="reference" />
+       <attr name="textBody" format="reference" />
+       <attr name="buttonText" format="reference"/>
+       <attr name="radioButtonText" format="reference"/>
+       <attr name="backgroundTheme" format="reference"></attr>
+<!-- These are the attributes that we want to retrieve from the theme
+     in app/PreferencesFromCode.java -->
+<declare-styleable name="TogglePrefAttrs">
+    <attr name="android:preferenceLayoutChild" />
+</declare-styleable>
+
+<!-- These are the attributes that we want to retrieve from the theme
+     in view/Gallery1.java -->
+<declare-styleable name="Gallery1">
+    <attr name="android:galleryItemBackground" />
+</declare-styleable>
+
+<declare-styleable name="LabelView">
+    <attr name="text" format="string" />
+    <attr name="textColor" format="color" />
+    <attr name="textSize" format="dimension" />
+</declare-styleable>
+
+<!-- These are attributes used with 'DraggableDot' drawables in
+     view/DragAndDropActivity.java and view/DraggableDot.java -->
+<declare-styleable name="DraggableDot">
+    <attr name="radius" format="dimension" />
+    <attr name="legend" format="string" />
+    <attr name="anr">
+        <enum name="none" value="0" />
+        <enum name="thumbnail" value="1" />
+        <enum name="drop" value="2" />
+    </attr>
+</declare-styleable>
+
+<!-- These are the attributes that we want to retrieve for
+     app/FragmentArguments.java -->
+
+<declare-styleable name="FragmentArguments">
+    <attr name="android:label" />
+</declare-styleable>
+
+<declare-styleable name="Theme.Ragnar">
+	    <attr name="helpIcon" format="reference" />
+		<attr name="moreIconWidget" format="reference"/>
+		<attr name="alertIcon" format="reference"/>
+		<attr name="settingsIcon" format="reference"/>
+		<attr name="downloadIcon" format="reference" />
+		<attr name="downloadExtraIcon" format="reference" />
+		<attr name="downloadGappsIcon" format="reference" />
+		<attr name="backgroundSelector" format="reference" />
+		<attr name="separator" format="reference" />
+		<attr name="browserIcon" format="reference"/>
+        <attr name="navbg" format="reference"/>
+    <attr name="selected" format="reference"/>
+
+    <attr name="navselected" format="reference"/>
+		<attr name="donateIcon" format="reference"/>
+		<attr name="alliancelogo" format="reference"/>
+    <attr name="tab_header" format="reference"/>
+    <attr name="colorHoloRed" format="color" />
+		<attr name="colorHoloGreen" format="color" />
+		<attr name="colorHoloBlue" format="color" />
+        <attr name="ic_about" format="reference" />
+    <attr name="ic_menu_sort_by_size" format="reference" />
+    <attr name="ic_color_picker" format="reference" />
+    <attr name="ic_user_interface" format="reference" />
+    <attr name="ic_toggles" format="reference" />
+    <attr name="ic_general_mods" format="reference" />
+    <attr name="shortcuts" format="reference" />
+    <attr name="animations" format="reference" />
+    <attr name="ic_settings_lockscreen" format="reference" />
+    <attr name="ic_hw_keys_symbol" format="reference" />
+    <attr name="ic_phone" format="reference" />
+    <attr name="ic_restart" format="reference" />
+	</declare-styleable>
+    <attr name="Widget.TextView.ListSeparator" format="reference"/>
+<attr name="activatedBackgroundIndicator" format="reference"/>
+<attr name="textAppearanceMedium" format="reference"/>
+</resources>

@@ -1,0 +1,97 @@
+<resources>
+    <style name="AppTheme" parent="AppTheme.Base"/>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat">
+        <item name="colorPrimary">#263238</item>
+        <item name="colorPrimaryDark">#FF4081</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorAccent">#EC407A</item>
+        <item name="windowActionBar">false</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <style name="ToolbarCustomIconColor" parent="AppTheme">
+        <!-- android:textColorSecondary is used for coloring the navigation drawer icon and up arrow. -->
+        <item name="android:textColorSecondary">#ff263238</item>
+    </style>
+
+
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+
+    <!-- Use the Android Dialog theme as the base for a new compound theme DialogNoTitle -->
+    <!-- Apply using attribute android:theme="@style/DialogNoTitle in manifest file for activity, -->
+    <!-- or setTheme(R.style.DialogNoTitle) before setContentView() in code. -->
+
+    <style name="DialogNoTitle" parent="@android:style/Theme.Dialog">
+
+        <!-- hide the Window Title -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/White</item>
+        <item name="android:colorBackground">@color/White</item>
+        <item name="android:textColor">@color/Black</item>
+    </style>
+
+    <style name="DialogNoTitleDark" parent="@android:style/Theme.Dialog">
+
+        <!-- hide the Window Title -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/DarkSlateGray</item>
+        <item name="android:colorBackground">@color/buttontextcolor</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <!-- Customize the Holo.Light theme -->
+
+
+    <!-- First define a custom ActionBar color -->
+
+    <style name="RedActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/list_background_pressed2</item>
+    </style>
+
+    <style name="GrayActionBar" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@color/bar_gray</item>
+    </style>
+
+    <style name="HoloLightCustom" parent="@android:style/Theme.Holo.Light">
+
+    </style>
+
+
+ 
+    <!-- Customize the Holo theme -->
+
+    <style name="HoloCustom" parent="@android:style/Theme.Holo">
+
+    </style>
+	
+	<style name="HorizontalSeparator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?attr/separator</item>
+    </style>
+    
+    <style name="MainListElement">
+	    <item name="android:clickable">true</item>
+	    <item name="android:background">?attr/backgroundSelector</item>
+	    <item name="android:paddingTop">8dp</item>
+	    <item name="android:paddingBottom">8dp</item>
+	    <item name="android:paddingLeft">16dp</item>
+	    <item name="android:paddingRight">16dp</item>
+	</style>
+	
+    <style name="AboutListElement">
+	    <item name="android:paddingTop">8dp</item>
+	    <item name="android:paddingBottom">8dp</item>
+	    <item name="android:paddingLeft">16dp</item>
+	    <item name="android:paddingRight">16dp</item>
+	</style>
+	
+
+</resources>
+

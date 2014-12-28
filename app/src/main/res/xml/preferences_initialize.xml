@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="caps_pref"
+        android:summary="Check to capitalize name"
+        android:title="Capitalize Name" />
+
+    <ListPreference
+        android:defaultValue="1"
+        android:dialogTitle="Theme"
+        android:entries="@array/labels_list_preference"
+        android:entryValues="@array/values_list_preference"
+        android:key="list_preference"
+        android:summary="Set theme preference"
+        android:title="Theme Preference" />
+
+</PreferenceScreen>

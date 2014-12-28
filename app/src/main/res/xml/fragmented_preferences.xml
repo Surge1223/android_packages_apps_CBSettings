@@ -1,0 +1,18 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Application Preferences" >
+        <CheckBoxPreference
+            android:key="caps_pref"
+            android:summary="Example Text"
+            android:title="Type" />
+
+        <ListPreference
+            android:dialogTitle="Theme"
+            android:entries="@array/labels_list_preference"
+            android:entryValues="@array/values_list_preference"
+            android:key="list_preference"
+            android:summary="Set theme preference"
+            android:title="Theme Preference" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

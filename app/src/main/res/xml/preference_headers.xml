@@ -1,0 +1,31 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <header
+        android:fragment="com.cheekybastards.ftw.settings.Prefs$Prefs1Fragment"
+        android:icon="@drawable/ic_launcher"
+        android:summary="Choose a display style."
+        android:title="Styles" />
+    <header
+        android:fragment="com.cheekybastards.ftw.settings.Prefs$Prefs2Fragment"
+        android:icon="@drawable/ic_launcher"
+        android:summary="Choose your greeting name."
+        android:title="Greeting Name" >
+    </header>
+    <header
+        android:icon="@drawable/ic_launcher"
+        android:summary="Cheeky source code :)"
+        android:title="CheekyBastards GitHub" >
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="http://www.github.com" />
+    </header>
+    <header
+        android:icon="@drawable/ic_launcher"
+        android:summary="A helpful resource for all your questions"
+        android:title="Need Help?" >
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="http://www.google.com" />
+    </header>
+
+</preference-headers>

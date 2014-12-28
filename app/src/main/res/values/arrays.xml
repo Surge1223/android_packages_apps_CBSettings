@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="navigation_drawer_entries">
+        <item>About</item>
+        <item>General</item>
+        <item>Performance</item>
+        <item>Backup/Restore Apps</item>
+        <item>Root File Explorer</item>
+    </string-array>
+    <string-array name="navigation_drawer_icons">
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+    </string-array>
+    <string-array name="nav_drawer_items">
+        <item>About</item>
+        <item>General</item>
+        <item>Performance</item>
+        <item>Backup/Restore Apps</item>
+        <item>Root File Explorer</item>
+    </string-array>
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_launcher</item>
+    </array>
+<string-array name="labels_list_preference">
+        <item>Custom Holo Dark</item>
+        <item>Custom Holo Light</item>
+    </string-array>
+    
+    <string-array name="values_list_preference">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+<string-array name="test_list_entries">
+        <item>Top</item>
+        <item>Center</item>
+        <item>Bottom</item>
+    </string-array>
+    <string-array name="test_list_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

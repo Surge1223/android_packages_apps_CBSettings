@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CheekyBastard Settings</string>
+    <string name="hello_world">Hello world!</string>
+ <string name="action_settings">Settings</string>
+    <string name="menu_settings">Menu</string>
+    <string name="drawer_open">Slider Menu Opened</string>
+    <string name="drawer_close">Slider Menu Closed</string>
+<string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="menu_show_drawer_icon">Show in app drwer</string>
+    <string name="hello">ThemesDemo</string>
+    <string name="createLabel">Create an Item</string>
+    <string name="quit_title">Exit</string>
+    <string name="error_demo_label">Show Error Dialog</string>
+    <string name="help_title">Help</string>
+    <string name="help_text">Use the Settings menu to change the display theme. \n\n<i>USAGE</i>\nYou can 
+        toggle between light and dark themes for both the main displays and the dialog windows. 
+        Notice that this textfield is wrapped in a scroll view, so should scroll if there is too 
+        much text to fit in the window. \n\n<i>VERSION</i>\nThis example requires Android API 15 or above.</string>
+    <string name="about_text">This apl allows you to easily customize AllianceROM to your personal liking. Enjoy fuckers.</string>
+    <string name="about_title">About</string>
+    <string name="settings_title">Settings</string>
+    <string name="restart">Restart with New Style</string>
+    <string name="pref1_title">No titlebars</string>
+    <string name="pref1_summary">Suppress titlebars on screens</string>
+    <string name="pref2_title">Job priority</string>
+    <string name="pref2_summary">Set desired job priority</string>
+    <string name="pref3_title">Username</string>
+    <string name="pref3_summary">Edit the username</string>
+    <string name="pref4_title">Light background theme</string>
+    <string name="pref4_summary">Enable light background theme</string>
+    <string name="create_item1">Task Choice 1</string>
+    <string name="create_item2">Task Choice 2</string>
+    <string name="processMenu_title">Select Item</string>
+    <string name="task_description1">A description of Task 1 will go in this field.</string>
+    <string name="task_description2">A description of Task 2 will go in this field.</string>
+    <string name="desc_list_item_icon">Item Icon</string>
+<string name="activity_persistent">App/Activity/Persistent State</string>
+<string name="persistent_msg">Demonstration of persistent activity state with getPreferences(0).edit() and getPreferences(0).</string>
+
+<string name="activity_recreate">App/Activity/Recreate</string>
+<string name="activity_recreate_msg">Demonstration recreating an activity, to have
+    it reconstructed with significant new changes.  In this case the theme is changed.</string>
+<string name="recreate">Recreate</string>
+
+<string name="activity_finish_affinity">App/Activity/Finish Affinity</string>
+<string name="receive_result_instructions">Press the button to get an activity result, which will be displayed here:</string>
+<string name="receive_result_result">Get Result</string>
+<string name="activity_receive_result">App/Activity/Receive Result</string>
+<string name="activity_forwarding">App/Activity/Forwarding</string>
+<string name="forwarding">Press the button to go forward to the next activity.  This activity will stop, so you will no longer see it when going back.</string>
+<string name="go">Go</string>
+<string name="forward_target">Press back button and notice we don\'t see the previous activity.</string>
+<string name="pick_result">Pick a result to send, or BACK to cancel.</string>
+<string name="corky">Corky</string>
+<string name="violet">Violet</string>
+<string name="tabs_1_tab_1">tab1</string>
+<string name="tabs_1_tab_2">tab2</string>
+<string name="tabs_1_tab_3">tab3</string>
+
+<string name="activity_hello_world">App/Activity/<b>Hello <i>World</i></b></string>
+ <string name="activity_dialog">App/Activity/Dialog</string>
+    <string name="dialog_activity_text">Example of how you can use the
+            Theme.Dialog theme to make an activity that looks like a
+            dialog.  It also has lots of text to show how text wrapping (and
+            corresponding window size adjustment) can happen in a dialog.</string>
+    <string name="dialog_activity_add">Add content</string>
+    <string name="dialog_activity_remove">Remove content</string>
+    <string name="activity_custom_dialog">App/Activity/Custom Dialog</string>
+    <string name="custom_dialog_activity_text">Example of how you can use a
+            custom Theme.Dialog theme to make an activity that looks like a
+            customized dialog, here with an ugly frame.</string>
+
+    <string name="quick_contacts_demo">App/Activity/QuickContactsDemo</string>
+
+    <string name="activity_wallpaper">App/Activity/Wallpaper</string>
+    <string name="activity_setwallpaper">App/Activity/SetWallpaper</string>
+    <string name="set_wallpaper">Set Wallpaper</string>
+    <string name="randomize">Randomize</string>
+
+    <string name="activity_screen_orientation">App/Activity/Screen Orientation</string>
+    <string name="screen_orientation_summary">Demonstrates the available screen
+        orientation modes.  Often you want to set the desired mode in your manifest
+        instead of programmatically.</string>
+    <string name="screen_orientation">Screen Orientation</string>
+
+    <string name="activity_redirect">App/Activity/Redirection</string>
+    <string name="redirect_enter">Press the button to start the example.  The next activity will conditionally redirect to another activity to collect data from the user.</string>
+    <string name="redirect_main">You now see the main activity running normally because the user text has been set to:</string>
+    <string name="clear_text">Clear and Exit</string>
+    <string name="new_text">New Text</string>
+    <string name="redirect_getter">Enter the text that will be used by the main activity.  Press back to cancel.</string>
+    <string name="apply">Apply</string>
+    <string name="title_activity_item_one">ItemOne</string>
+    <string name="title_activity_item_two">ItemTwo</string>
+    <string name="title_section1">Unlinked Colors</string>
+    <string name="title_section2">Background Colors</string>
+    <string name="title_section3">Animations</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <!-- CPU settings -->
+    <string name="current_speed">Current Speed</string>
+    <string name="current_max">Current max:</string>
+    <string name="current_min">Current min:</string>
+    <string name="governor">Governor</string>
+    <string name="io">IO Scheduler</string>
+    <string name="sob">Set on boot</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="mt_gov_ctrl">Governor Settings</string>
+
+    <!-- App backup/restore -->
+    <string name="backup_options">Backup Options</string>
+    <string name="nobackup">No current Back upsdetected</string>
+    <string name="nostatus">Unable to retrieve information from device</string>
+
+
+    <string name="preferences_from_xml">Preference/1. Preferences from XML</string>
+    <string name="launching_preferences">Preference/2. Launching preferences</string>
+    <string name="preference_dependencies">Preference/3. Preference dependencies</string>
+    <string name="default_values">Preference/4. Default values</string>
+    <string name="preferences_from_code">Preference/5. Preferences from code</string>
+    <string name="advanced_preferences">Preference/6. Advanced preferences</string>
+    <string name="fragment_preferences">Preference/7. Fragment</string>
+    <string name="preference_with_headers">Preference/8. Headers</string>
+    <string name="switch_preference">Preference/9. Switch</string>
+
+    <string name="launch_preference_activity">Launch PreferenceActivity</string>
+    <string name="counter_value_is">The counter value is</string>
+
+    <string name="inline_preferences">In-line preferences</string>
+    <string name="dialog_based_preferences">Dialog-based preferences</string>
+    <string name="launch_preferences">Launch preferences</string>
+    <string name="preference_attributes">Preference attributes</string>
+
+    <string name="title_checkbox_preference">Checkbox preference</string>
+    <string name="summary_checkbox_preference">This is a checkbox</string>
+
+    <string name="title_switch_preference">Switch preference</string>
+    <string name="summary_switch_preference">This is a switch</string>
+    <string name="summary_switch_preference_yes_no">This is a switch with custom text</string>
+
+    <string name="title_yesno_preference">Yes or no preference</string>
+    <string name="summary_yesno_preference">An example that uses a yes/no dialog</string>
+    <string name="dialog_title_yesno_preference">Do you like bananas?</string>
+
+    <string name="title_edittext_preference">Edit text preference</string>
+    <string name="summary_edittext_preference">An example that uses an edit text dialog</string>
+    <string name="dialog_title_edittext_preference">Enter your favorite animal</string>
+
+    <string name="title_list_preference">List preference</string>
+    <string name="summary_list_preference">An example that uses a list dialog</string>
+    <string name="dialog_title_list_preference">Choose one</string>
+
+    <string name="title_screen_preference">Screen preference</string>
+    <string name="summary_screen_preference">Shows another screen of preferences</string>
+
+    <string name="title_fragment_preference">Fragment preference</string>
+    <string name="summary_fragment_preference">Shows another fragment of preferences</string>
+
+    <string name="title_next_screen_toggle_preference">Toggle preference</string>
+    <string name="summary_next_screen_toggle_preference">Preference that is on the next screen but same hierarchy</string>
+
+    <string name="title_intent_preference">Intent preference</string>
+    <string name="summary_intent_preference">Launches an Activity from an Intent</string>
+
+    <string name="title_my_preference">My preference</string>
+    <string name="summary_my_preference">This is a custom counter preference</string>
+
+    <string name="title_advanced_toggle_preference">Haunted preference</string>
+    <string name="summary_on_advanced_toggle_preference">I\'m on! :)</string>
+    <string name="summary_off_advanced_toggle_preference">I\'m off! :(</string>
+
+    <string name="title_parent_preference">Parent checkbox preference</string>
+    <string name="summary_parent_preference">This is visually a parent</string>
+    <string name="title_child_preference">Child checkbox preference</string>
+    <string name="summary_child_preference">This is visually a child</string>
+
+</resources>

@@ -1,0 +1,12 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Identification" >
+        <EditTextPreference
+            android:dialogTitle="Edit Text"
+            android:key="edittext_preference"
+            android:singleLine="true"
+            android:summary="Edit text"
+            android:title="Text" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
