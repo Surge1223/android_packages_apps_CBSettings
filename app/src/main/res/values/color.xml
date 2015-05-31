@@ -13,7 +13,18 @@
     <color name="ripple_red">#ffbf5232</color>
     <color name="material_teal">@color/material_deep_teal_500</color>
     <color name="ripple_material_teal">#ff149691</color>
+    <color name="material_accent">#ff009688</color>
 
+    <color name="material_cyan_500">#00BCD4</color>
+    <color name="ColorPrimary">#e62117</color>
+    <color name="ColorPrimaryDark">#c31c13</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="card_background_holo_dark">#80000000</color>
+    <color name="card_background_holo_light">@color/white</color>
+
+    <color name="card_background_material_dark">#424242</color>
+    <color name="card_background_material_light">@color/white</color>
     <color name="blue">#304f9f</color>
     <color name="grey">@color/material_blue_grey_800</color>
     <color name="light">@color/primary_material_light</color>
@@ -23,11 +34,55 @@
 
     <color name="windowBackgroundColor">#333333</color>
     <color name="black_translucent">#80000000</color>
+	<color name="material_grey_50">#fffafafa</color>
+	<color name="material_grey_100">#fff5f5f5</color>
+	<color name="material_grey_300">#ffeeeeee</color>
+	<color name="material_grey_500">#ffa3a3a3</color>
+	<color name="material_grey_600">#ff757575</color>
+	<color name="material_grey_700">#ff717171</color>
+	<color name="material_grey_900">#ff212121</color>
 
+	<color name="material_blue_grey_50">#ffeceff1</color>
+	<color name="material_blue_grey_100">#ffcfd8dc</color>
+	<color name="material_blue_grey_300">#ff90a4ae</color>
+	<color name="material_blue_grey_400">#ff78909c</color>
+	<color name="material_blue_grey_500">#ff607d8b</color>
+	<color name="material_blue_grey_600">#ff546e7a</color>
+	<color name="material_blue_grey_700">#ff455a64</color>
+	<color name="material_blue_grey_800">#ff37474f</color>
+	<!-- Primary color used by Settings -->
+	<color name="material_blue_grey_900">#ff263238</color>
+	<!-- Primary dark color used by Settings -->
+    <color name="material_primary">#ffC62828</color>
+	<color name="material_red_100">#fff4c7c3</color>
+	<color name="material_red_300">#ffe67c73</color>
+	<color name="material_red_500">#ffdb4437</color>
+	<color name="material_red_700">#ffc53929</color>
+	<color name="material_red_A200">#ffff5252</color>
+	<color name="material_red_A400">#ffff1744</color>
 
-<color name="transparent">#00000000</color>
+	<color name="material_blue_100">#ffc6dafc</color>
+	<color name="material_blue_300">#ff7baaf7</color>
+	<color name="material_blue_500">#ff4285f4</color>
+	<color name="material_blue_700">#ff3367d6</color>
+	<color name="material_blue_A200">#ff448aff</color>
+	<color name="material_blue_A400">#ff2979ff</color>
+
+	<color name="material_light_blue_A200">#ff40c4ff</color>
+
+	<color name="material_teal_100">#ffb2ebf2</color>
+	<color name="material_teal_300">#ff4dd0e1</color>
+	<color name="material_teal_500">#ff00bcd4</color>
+	<color name="material_teal_700">#ff0097a7</color>
+	<color name="material_teal_A200">#ff18ffff</color>
+	<color name="material_teal_A400">#ff00e5ff</color>
+	<!-- Accent color used by Settings -->
+	<color name="material_dark_teal_A400">#ff009688</color>
+	<color name="material_green_100">#ffb7e1cd</color>
+    <color name="material_primary_dark">#ffB71C1C</color>
+	<color name="transparent">#00000000</color>
     <color name="navigation_drawer_background">#cc000000</color>
-<color name="bgcolor">#fff2eadc</color>
+	<color name="bgcolor">#fff2eadc</color>
     <color name="bgcolor2">#ffaaaaaa</color>
     <color name="buttontextcolor">#ff000000</color>
     <color name="titleColor">#ffeeffee</color>
@@ -327,4 +382,27 @@
     <color name="purple_light">#a276eb</color>
     <color name="purple_middle">#8658ce</color>
     <color name="purple_dark">#6a3ab2</color>
+	<color name="separator_dark">#ff333333</color>
+    <color name="separator_light">#ffdddddd</color>
+    
+    <!-- A light Holo shade of blue -->
+    <color name="holo_blue_light">#ff33b5e5</color>
+    <!-- A light Holo shade of green -->
+    <color name="holo_green_light">#ff99cc00</color>
+    <!-- A light Holo shade of red -->
+    <color name="holo_red_light">#ffff4444</color>
+    <!-- A dark Holo shade of blue -->
+    <color name="holo_blue_dark">#ff0099cc</color>
+    <!-- A dark Holo shade of green -->
+    <color name="holo_green_dark">#ff669900</color>
+    <!-- A dark Holo shade of red -->
+    <color name="holo_red_dark">#ffcc0000</color>
+    <!-- A Holo shade of purple -->
+    <color name="holo_purple">#ffaa66cc</color>
+    <!-- A light Holo shade of orange -->
+    <color name="holo_orange_light">#ffffbb33</color>
+    <!-- A dark Holo shade of orange -->
+    <color name="holo_orange_dark">#ffff8800</color>
+    <!-- A really bright Holo shade of blue -->
+    <color name="holo_blue_bright">#ff00ddff</color>
 </resources>

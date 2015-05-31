@@ -4,13 +4,229 @@
     android:layout_height="match_parent"
     android:background="@android:color/holo_blue_dark" >
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:text="Layout 1"
-        android:textColor="@android:color/black"
-        android:textSize="20sp" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="@color/card_background_material_dark">
+        <include layout="@layout/toolbar"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/scrollView"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:background="@color/card_background_material_dark">
+
+
+
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view"
+                    android:layout_gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="4dp"
+                    card_view:cardElevation="4dp"
+                    style="?attr/cardStyle"
+                    android:layout_margin="5dp"
+                    android:backgroundTintMode="src_atop"
+                    android:layout_marginBottom="0dp">
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical"
+                        style="?attr/cardStyle"
+                        android:padding="0dp"
+                        android:layout_margin="0dp"
+                        android:background="@color/card_background_material_dark">
+
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:id="@+id/lollipop_ss"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="@string/lollipop_ss"
+                            android:gravity="start"
+                            android:textSize="16.0sp"
+                            android:textIsSelectable="true"
+                            android:textStyle="bold"
+                            android:textColor="@color/material_teal_500" />
+
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:id="@+id/textView2"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="@string/versionstatus"
+                            android:textSize="13.0sp"
+                            android:gravity="left" />
+
+                        <TextView
+                            android:id="@+id/textSystemStatus"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/recovery_state_not_installed"
+                            android:textSize="13.0sp"
+                            android:gravity="left" />
+
+                        <TextView
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="13.0sp"
+                            android:text="@string/selinux_state_enforcing"
+                            android:id="@+id/textSelinuxStatus"
+                            android:gravity="left"
+                            android:layout_marginBottom="15sp" />
+
+
+
+                        <Button
+                            android:id="@+id/buttonInstall"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/install_recovery"
+                            android:textSize="13.0sp"
+                            android:textColor="@color/primary_dark_material_dark"
+                            style="?attr/cardStyle"
+                            android:background="@color/material_deep_teal_500"
+                            android:backgroundTint="@color/material_deep_teal_500"
+                            android:layout_marginBottom="5sp"
+                            android:nestedScrollingEnabled="false" />
+
+
+                        <Button
+                            android:id="@+id/buttonUninstall"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/uninstall_recovery"
+                            android:textSize="13.0sp"
+                            style="?attr/cardStyle"
+                            android:textColor="@color/material_red_500" />
+
+
+
+                        <Button
+                            android:id="@+id/buttonReboot"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reboot_recovery"
+                            android:textSize="13.0sp"
+                            android:textColor="@color/material_red_500"
+                            style="?attr/cardStyle"/>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view2"
+                    android:layout_gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    card_view:cardCornerRadius="4dp"
+                    card_view:cardElevation="4dp"
+                    style="?attr/cardStyle"
+                    android:layout_margin="5dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp">
+
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:orientation="vertical"
+                        style="?attr/cardStyle"
+                        android:padding="0dp"
+                        android:layout_margin="0dp"
+                        android:touchscreenBlocksFocus="true"
+                        android:backgroundTintMode="src_atop"
+                        android:background="@color/card_background_material_dark">
+
+
+
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Backup Manager"
+                            android:textSize="20.0sp"
+                            android:gravity="center"
+                            android:textColor="#ffd6282e"/>
+                        <TextView
+                            android:id="@+id/help_text_manager"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:text="@string/help_text_manager"
+                            android:gravity="center"
+                            android:textSize="13.0sp"/>
+
+
+
+
+                        <Button
+                            android:text="@string/set_selinux_permissive"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/buttonSelinuxChange"
+                            android:textSize="13.0sp"
+                            android:textColor="@color/material_red_500"
+                            style="?attr/cardStyle" />
+
+
+
+                        <Button
+                            android:id="@+id/backup_button"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Create TWRP  Backup"
+                            android:textSize="13.0sp"
+                            style="?attr/cardStyle"
+                            android:textColor="@color/material_red_500" />
+
+
+
+                        <Button
+                            android:id="@+id/restore_backup"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            style="?attr/cardStyle"
+                            android:text="Choose Backup to Save/Restore"
+                            android:textSize="13.0sp"
+                            android:gravity="center"
+                            android:textColor="@color/material_red_500" />
+
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView1"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:layout_width="fill_parent"
+                            android:text="@string/instructions"
+                            android:layout_margin="10dip"/>
+
+
+                    </LinearLayout>
+
+
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
 </RelativeLayout>

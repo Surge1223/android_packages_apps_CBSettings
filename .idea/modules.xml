@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CheekyBastardSettings.iml" filepath="$PROJECT_DIR$/CheekyBastardSettings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android_packages_apps_CBSettings.iml" filepath="$PROJECT_DIR$/android_packages_apps_CBSettings.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>
-

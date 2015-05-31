@@ -1,12 +1,13 @@
 <resources>
-    <style name="AppTheme" parent="AppTheme.Base"/>
 
-    <style name="AppTheme.Base" parent="Theme.AppCompat">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">#263238</item>
         <item name="colorPrimaryDark">#FF4081</item>
         <item name="android:windowNoTitle">true</item>
         <item name="colorAccent">#EC407A</item>
         <item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+		<item name="cardBackground">@color/card_background_holo_dark</item>
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
     </style>
 
@@ -63,19 +64,16 @@
     </style>
 
 
- 
     <!-- Customize the Holo theme -->
 
     <style name="HoloCustom" parent="@android:style/Theme.Holo">
 
     </style>
-	
 	<style name="HorizontalSeparator">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:background">?attr/separator</item>
     </style>
-    
     <style name="MainListElement">
 	    <item name="android:clickable">true</item>
 	    <item name="android:background">?attr/backgroundSelector</item>
@@ -84,14 +82,36 @@
 	    <item name="android:paddingLeft">16dp</item>
 	    <item name="android:paddingRight">16dp</item>
 	</style>
-	
     <style name="AboutListElement">
 	    <item name="android:paddingTop">8dp</item>
 	    <item name="android:paddingBottom">8dp</item>
 	    <item name="android:paddingLeft">16dp</item>
 	    <item name="android:paddingRight">16dp</item>
 	</style>
-	
+    <style name="Theme.Darkftw" parent="Theme.AppCompat.Light">
+        <!-- colorPrimary is used for the default action bar background -->
+        <item name="colorPrimary">@color/material_deep_teal_500</item>
+
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorPrimaryDark">@color/primary_dark_material_dark</item>
+
+        <!-- colorAccent is used as the default value for colorControlActivated
+             which is used to tint widgets -->
+        <item name="colorAccent">@color/ColorPrimary</item>
+
+        <!-- You can also set colorControlNormal, colorControlActivated
+             colorControlHighlight & colorSwitchThumbNormal. -->
+    </style>
+
+
+<style name="CardStyle.Dark" parent="@style/CardView.Dark">
+<item name="android:layout_width">match_parent</item>
+<item name="android:layout_height">wrap_content</item>
+<item name="android:layout_gravity">center</item>
+<item name="android:paddingTop">16dp</item>
+<item name="android:paddingBottom">16dp</item>
+<item name="cardBackgroundColor">?attr/cardBackground</item>
+</style>
 
 </resources>
 

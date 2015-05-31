@@ -1,10 +1,118 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-<style name="AppTheme" parent="AppTheme.Base">
-    <item name="android:windowContentTransitions">true</item>
-    <item name="android:windowAllowEnterTransitionOverlap">true</item>
-    <item name="android:windowAllowReturnTransitionOverlap">true</item>
-    <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
-    <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
-</style>
+    <style name="AppTheme" parent="AppTheme.Base"/>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">#263238</item>
+        <item name="colorPrimaryDark">#FF4081</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorAccent">#EC407A</item>
+        <item name="windowActionBar">false</item>
+		<item name="cardBackground">@color/card_background_holo_dark</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    </style>
+
+    <style name="ToolbarCustomIconColor" parent="AppTheme">
+        <!-- android:textColorSecondary is used for coloring the navigation drawer icon and up arrow. -->
+        <item name="android:textColorSecondary">#ff263238</item>
+    </style>
+
+    android:background="@color/ColorPrimary"
+
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+
+    <!-- Ue the Android Dialog theme as the base for a new compound theme DialogNoTitle -->
+    <!-- Apply using attribute android:theme="@style/DialogNoTitle in manifest file for activity, -->
+    <!-- or setTheme(R.style.DialogNoTitle) before setContentView() in code. -->
+
+    <style name="DialogNoTitle" parent="@android:style/Theme.Dialog">
+
+        <!-- hide the Window Title -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/White</item>
+        <item name="android:colorBackground">@color/White</item>
+        <item name="android:textColor">@color/Black</item>
+    </style>
+
+    <style name="DialogNoTitleDark" parent="@android:style/Theme.Dialog">
+
+        <!-- hide the Window Title -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/DarkSlateGray</item>
+        <item name="android:colorBackground">@color/buttontextcolor</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <!-- Customize the Holo.Light theme -->
+
+
+    <!-- First define a custom ActionBar color -->
+
+    <style name="RedActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/list_background_pressed2</item>
+    </style>
+
+    <style name="GrayActionBar" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@color/bar_gray</item>
+    </style>
+
+    <style name="HoloLightCustom" parent="@android:style/Theme.Holo.Light">
+
+    </style>
+
+
+    <!-- Customize the Holo theme -->
+
+    <style name="HoloCustom" parent="@android:style/Theme.Holo">
+
+    </style>
+    <style name="HorizontalSeparator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?attr/separator</item>
+    </style>
+    <style name="MainListElement">
+        <item name="android:clickable">true</item>
+        <item name="android:background">?attr/backgroundSelector</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+    </style>
+    <style name="AboutListElement">
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+    </style>
+    <style name="Theme.Darkftw" parent="Theme.AppCompat.Light">
+        <!-- colorPrimary is used for the default action bar background -->
+        <item name="colorPrimary">@color/material_deep_teal_500</item>
+
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorPrimaryDark">@color/primary_dark_material_dark</item>
+
+        <!-- colorAccent is used as the default value for colorControlActivated
+             which is used to tint widgets -->
+        <item name="colorAccent">@color/ColorPrimary</item>
+
+        <!-- You can also set colorControlNormal, colorControlActivated
+             colorControlHighlight & colorSwitchThumbNormal. -->
+    </style>
+
+
+    <style name="CardStyle.Dark" parent="@style/CardView.Dark">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="cardBackgroundColor">?attr/cardBackground</item>
+    </style>
+
 </resources>
+
