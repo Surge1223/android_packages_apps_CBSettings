@@ -10,20 +10,27 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import com.cheekybastards.ftw.fragments.*;
-import com.cheekybastards.ftw.adapter.*;
-import com.cheekybastards.ftw.model.*;
-import com.cheekybastards.ftw.settings.*;
+
+import com.cheekybastards.ftw.adapter.NavDrawerListAdapter;
+import com.cheekybastards.ftw.fragments.AboutFragment;
+import com.cheekybastards.ftw.fragments.GeneralFragment;
+import com.cheekybastards.ftw.fragments.RootFileFragment;
+import com.cheekybastards.ftw.model.NavDrawerItem;
+import com.cheekybastards.ftw.settings.About;
+import com.cheekybastards.ftw.settings.Help;
+import com.cheekybastards.ftw.settings.Prefs;
 
 import java.util.ArrayList;
 
@@ -33,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle actionBarDrawerToggle;
-
+    public final String TAG = this.getClass().getSimpleName();
     // nav drawer title
     private CharSequence mDrawerTitle;
     private Toolbar toolbar;
@@ -43,14 +50,20 @@ public class MainActivity extends AppCompatActivity {
     // slide menu items
     private String[] navMenuTitles;
     private TypedArray navMenuIcons;
-
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter adapter;
 
+
+	// shell defines
+    String shell = new String();
+    String su = new String();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        shell = "sh";
+        su = "su";
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -121,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Diplaying fragment view for selected nav drawer list item
-     * */
+     **/
     private void displayView(int position) {
         // update the main content by replacing fragments
         Fragment fragment = null;
@@ -136,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new PerformanceFragment ();
                 break;
             case 3:
-                fragment = new BackupFragment ();
+                fragment = new ItemOne ();
                 break;
             case 4:
                 fragment = new RootFileFragment ();
@@ -162,6 +175,21 @@ public class MainActivity extends AppCompatActivity {
             // error in creating fragment
             Log.e("MainActivity", "Error in creating fragment");
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mDrawerLayout.isDrawerOpen(Gravity.START))
+            mDrawerLayout.closeDrawer(Gravity.START);
+        else
+            super.onBackPressed();
+    }
+
+    public void restoreActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+        actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setTitle(mTitle);
     }
 
     @Override
@@ -200,14 +228,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /** onPause is called when the activity is going to background. */
+    /**
+     * onPause is called when the activity is going to background.
+     */
 
     @Override
     public void onPause() {
         super.onPause();
     }
 
-    /** onResume is called when the activity is going to foreground. */
+    /**
+     * onResume is called when the activity is going to foreground.
+     */
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.i(TAG, "onResume()");
+    }
+
+    // Method to check SharedPreferences and set the current theme
 
     /** Process clicks on the buttons */
 

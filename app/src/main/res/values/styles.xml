@@ -1,6 +1,7 @@
 <resources>
+    <style name="AppTheme" parent="AppTheme.Base"/>
 
-    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="AppTheme.Base" parent="Theme.AppCompat">
         <item name="colorPrimary">#263238</item>
         <item name="colorPrimaryDark">#FF4081</item>
         <item name="android:windowNoTitle">true</item>

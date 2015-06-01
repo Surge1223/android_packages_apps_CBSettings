@@ -1,29 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceScreen android:layout="@layout/cheekybanner" android:key="logo" />
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <PreferenceScreen
+        android:key="logo"
+        android:layout="@layout/cheekybanner" />
+
     <PreferenceCategory android:title="Rom Developers">
-        <Preference android:icon="@drawable/beans" android:title="BeansTown106" android:key="beans" android:summary="Click To Donate To Beans">
-            <intent android:action="android.intent.action.VIEW" android:data="http://forum.xda-developers.com/donatetome.php?u=4395895" />
+
+        <Preference
+            android:icon="@drawable/beans"
+            android:key="beans"
+            android:summary="Click To Donate To Beans"
+            android:title="BeansTown106">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://forum.xda-developers.com/donatetome.php?u=4395895" />
         </Preference>
-        <Preference android:icon="@drawable/baja" android:title="Bajasur" android:key="baja" android:summary="Click To Donate To Bajasur">
-            <intent android:action="android.intent.action.VIEW" android:data="http://forum.xda-developers.com/donatetome.php?u=4854133" />
+
+        <Preference
+            android:icon="@drawable/baja"
+            android:key="baja"
+            android:summary="Click To Donate To Bajasur"
+            android:title="Bajasur">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://forum.xda-developers.com/donatetome.php?u=4854133" />
         </Preference>
-        <Preference android:icon="@drawable/surge" android:title="Surge1223" android:key="surge" android:summary="Click To Donate To Surge">
-            <intent android:action="android.intent.action.VIEW" android:data="http://forum.xda-developers.com/donatetome.php?u=4939386" />
+
+        <Preference
+            android:icon="@drawable/surge"
+            android:key="surge"
+            android:summary="Click To Donate To Surge"
+            android:title="Surge1223">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://forum.xda-developers.com/donatetome.php?u=4939386" />
         </Preference>
     </PreferenceCategory>
+
     <PreferenceCategory android:title="Rom Themer">
-        <Preference android:icon="@drawable/davey" android:title="DaveyAnnihalation" android:key="davey" android:summary="Click To Donate To Davey">
-            <intent android:action="android.intent.action.VIEW" android:data="http://forum.xda-developers.com/donatetome.php?u=4603975" />
+
+        <Preference
+            android:icon="@drawable/davey"
+            android:key="davey"
+            android:summary="Click To Donate To Davey"
+            android:title="DaveyAnnihalation">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://forum.xda-developers.com/donatetome.php?u=4603975" />
         </Preference>
     </PreferenceCategory>
+
     <PreferenceCategory android:title="CheekyBastards Info ">
-        <Preference android:title="CheekyBastards GitHub" android:key="xda" android:summary="Click to View Our Xda thread for more info">
-            <intent android:action="android.intent.action.VIEW" android:data="http://www.google.com" />
+
+        <Preference
+            android:key="xda"
+            android:summary="Click to View Our Xda thread for more info"
+            android:title="CheekyBastards GitHub">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://www.google.com" />
         </Preference>
-        <Preference android:title="CheekyBastards XDA Thread" android:key="xda1" android:summary="Click to View/Submit User Created Themes">
-            <intent android:action="android.intent.action.VIEW" android:data="http://www.google.com" />
+
+        <Preference
+            android:key="xda1"
+            android:summary="Click to View/Submit User Created Themes"
+            android:title="CheekyBastards XDA Thread">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://www.google.com" />
         </Preference>
     </PreferenceCategory>
 </PreferenceScreen>

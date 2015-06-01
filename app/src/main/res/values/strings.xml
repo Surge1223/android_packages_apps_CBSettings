@@ -191,16 +191,10 @@
     <string name="versionstatus">Version: 3.85</string>
     <string name="disclaimer">THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.</string>
     <string name="help_text_manager">Choose a TWRP backup to restore from by selecting TWRP backup folder</string>
-    <string name="lollipop_ss">Status:</string>
-
     <string name="status_installed">#66FF99</string>
     <string name="status_notinstalled">#FF0000</string>
     <string name="status_upgrade">#FFFF00</string>
     <string name="reboot_write_protect">Reboot to Write Protect Off Mode</string>
-    <string name="set_selinux_permissive">Attempt to set SELinux to Permissive</string>
-    <string name="selinux_state_caption">SELinux:</string>
-    <string name="selinux_state_permissive">SELinux: Permissive</string>
-    <string name="selinux_state_enforcing">SELinux: Enforcing</string>
 
     <string-array name="items">
         <item>Item 1</item>
@@ -218,4 +212,228 @@
         <item>Safestrap update</item>
         <item>Android OS update</item>
     </string-array>
+
+    <string name="dialog_button_label">OK</string>
+    <string name="smart_name">Smartmax Tuning</string>
+    <string name="cons_name">Conservative Tuning</string>
+    <string name="intel_name">Intellidemand Tuning</string>
+    <string name="touch_name">Touchdemand Tuning</string>
+    <string name="ond_name">Ondemand Tuning</string>
+    <string name="notif_dialog">Choose Profile</string>
+    <string name="stats">Stats</string>
+    <string name="about">About</string>
+    <string name="title9">Downloader</string>
+    <string name="title8">Installer</string>
+    <string name="title7">Power</string>
+    <string name="title6">UV Table</string>
+    <string name="title5">stats</string>
+    <string name="title4">Misc Settings</string>
+    <string name="title3">GPU Settings</string>
+    <string name="title2">CPU Settings</string>
+    <string name="title1">Welcome!</string>
+    <string name="boot">Set on boot</string>
+    <string name="menu_save">Save Profile</string>
+    <string name="menu_load">Load Profile</string>
+    <string name="menu_manage">Erase Profiles</string>
+    <string name="profile">New profile</string>
+    <string name="gpumax">GPU Max frequency</string>
+    <string name="gpumin">GPU Min frequency</string>
+    <string name="enablegpu">Set Values</string>
+    <string name="setboot">Set on boot</string>
+    <string name="smart">Enable Smartdimmer</string>
+    <string name="aggr">Smartdimmer aggressiveness</string>
+    <string name="cpumax">CPU Max frequency</string>
+    <string name="cpumin">CPU Min frequency</string>
+    <string name="buttonlights">Set button backlight brightness</string>
+    <string name="btnset">Set</string>
+    <string name="chooselight">Choose Brightness</string>
+    <string name="s2w">Enable Sweep to Wake</string>
+    <string name="setgov">Set value</string>
+    <string name="BBL">Disable button backlight</string>
+    <string name="sweepbuttons"> Choose s2w min distance</string>
+    <string name="direction">s2w direction dependent</string>
+    <string name="tune">tune Governor</string>
+    <string name="notifprof">Notification(persistent)</string>
+    <string name="less25">-25 mV</string>
+    <string name="less50">-50 mV</string>
+    <string name="less75">-75 mV</string>
+    <string name="less100">-100 mV</string>
+    <string name="stockmv">Stock values</string>
+    <string name="uvvalues">UV</string>
+    <string name="applyuv">Apply UV</string>
+    <string name="step">Set buttons Step</string>
+    <string name="wipecache">Wipe Cache</string>
+    <string name="wipedalvik">Wipe Dalvik cache</string>
+
+
+    <string name="smart1">boost_duration</string>
+    <string name="smart2">boost_freq</string>
+    <string name="smart3">debug_mask</string>
+    <string name="smart4">down_rate_us</string>
+    <string name="smart5">ideal_freq</string>
+    <string name="smart6">input_boost_duration</string>
+    <string name="smart7">max_cpu_load</string>
+    <string name="smart8">min_cpu_load</string>
+    <string name="smart9">ramp_down_step</string>
+    <string name="smart10">ramp_up_step</string>
+    <string name="smart11">sampling_rate</string>
+    <string name="smart12">sync_cpu_downscale</string>
+    <string name="smart13">touch_poke_freq</string>
+    <string name="smart14">up_rate_us</string>
+
+    <string name="cons1">down_threshold</string>
+    <string name="cons2">freq_step</string>
+    <string name="cons3">ignore_nice_load</string>
+    <string name="cons4">sampling_down_factor</string>
+    <string name="cons5">sampling_rate</string>
+    <string name="cons6">sampling_rate_min</string>
+    <string name="cons7">up_threshold</string>
+
+    <string name="intel1">down_differential</string>
+    <string name="intel2">ignore_nice_load</string>
+    <string name="intel3">io_is_busy</string>
+    <string name="intel4">powersave_bias</string>
+    <string name="intel5">sampling_down_factor</string>
+    <string name="intel6">sampling_rate</string>
+    <string name="intel7">sampling_rate_min</string>
+    <string name="intel8">two_phase_freq</string>
+    <string name="intel9">up_threshold</string>
+
+    <string name="touch1">down_differential</string>
+    <string name="touch2">ignore_nice_load</string>
+    <string name="touch3">io_is_busy</string>
+    <string name="touch4">powersave_bias</string>
+    <string name="touch5">sampling_down_factor</string>
+    <string name="touch6">sampling_rate</string>
+    <string name="touch7">sampling_rate_min</string>
+    <string name="touch8">touch_factor</string>
+    <string name="touch9">touch_floor_freq</string>
+    <string name="touch10">touch_floor_time</string>
+    <string name="touch11">touch_min_cores</string>
+    <string name="touch12">touch_poke</string>
+    <string name="touch13">up_threshold</string>
+
+    <string name="ond1">down_differential</string>
+    <string name="ond2">ignore_nice_load</string>
+    <string name="ond3">input_boost_duration</string>
+    <string name="ond4">io_is_busy</string>
+    <string name="ond5">powersave_bias</string>
+    <string name="ond6">sampling_down_factor</string>
+    <string name="ond7">sampling_rate</string>
+    <string name="ond8">sampling_rate_min</string>
+    <string name="ond9">touch_poke</string>
+    <string name="ond10">two_phase_bottom_freq</string>
+    <string name="ond11">two_phase_dynamic</string>
+    <string name="ond12">two_phase_freq</string>
+    <string name="ond13">ui_counter</string>
+    <string name="ond14">ui_sampling_rate</string>
+    <string name="ond15">up_threshold</string>
+    <string name="ond16">ux_boost_threshold</string>
+    <string name="ond17">ux_freq</string>
+    <string name="ond18">ux_loading</string>
+
+    <string name="cpustat">CPU0 Current frequency</string>
+    <string name="cpustat1">CPU1 Current frequency</string>
+    <string name="cpustat2">CPU2 Current frequency</string>
+    <string name="cpustat3">CPU3 Current frequency</string>
+    <string name="battstats">Battery Stats</string>
+    <string name="battlevel">Battery level</string>
+    <string name="battstatus">Status: </string>
+    <string name="battvolt"> Voltage: </string>
+    <string name="frequsage">Frequencies Usage</string>
+
+    <string name="freq0">51MHz</string>
+    <string name="freq1">102MHz</string>
+    <string name="freq2">204MHz</string>
+    <string name="freq3">340MHz</string>
+    <string name="freq4">475MHz</string>
+    <string name="freq5">640MHz</string>
+    <string name="freq6">760MHz</string>
+    <string name="freq7">860MHz</string>
+    <string name="freq8">1GHz</string>
+    <string name="freq9">1.1GHz</string>
+    <string name="freq10">1.2GHz</string>
+    <string name="freq11">1.3GHz</string>
+    <string name="freq12">1.4GHz</string>
+    <string name="freq13">1.5GHz</string>
+
+
+
+    <string-array name="menulist">
+        <item >GPU Settings</item>
+        <item>CPU Settings</item>
+        <item>Misc</item>
+    </string-array>
+
+    <string-array name="gpumaxfreq">
+        <item>520</item>
+        <item>484</item>
+        <item>416</item>
+    </string-array>
+
+    <string-array name="gpuminfreq">
+        <item>304</item>
+        <item>247</item>
+    </string-array>
+
+    <string-array name="light_values">
+        <item>0</item>
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>90</item>
+        <item>100</item>
+        <item>110</item>
+        <item>120</item>
+        <item>130</item>
+        <item>140</item>
+        <item>150</item>
+        <item>160</item>
+        <item>170</item>
+        <item>180</item>
+        <item>190</item>
+        <item>200</item>
+        <item>210</item>
+        <item>220</item>
+        <item>230</item>
+        <item>240</item>
+        <item>255</item>
+    </string-array>
+
+    <string-array name="sweepbuttons">
+        <item>1 button</item>
+        <item>2 buttons</item>
+        <item>3 buttons</item>
+    </string-array>
+    <string name="add_prop">Add Property</string>
+    <string name="save">Save</string>
+    <string name="discard">Discard</string>
+    <string name="edit_key">Property Key</string>
+    <string name="edit_name">Property Name</string>
+    <string name="edit_prop_title">Edit/Add Property</string>
+    <string name="unsaved_changes_title">Unsaved Changes</string>
+    <string name="unsaved_changes_message">Would you like to set this property?</string>
+    <string name="add">Add</string>
+    <string name="backup">Backup</string>
+    <string name="restore">Restore</string>
+    <string name="themeprompt">Please choose a theme you would like the app to have.</string>
+    <string name="buildprop">Edit Build.prop</string>
+    <string name="cpuconfig">Edit Cpu Settings</string>
+    <string name="installbbx">Install Busybox</string>
+    <string name="fixperms">Fix Permissions</string>
+    <string name="lollipop_ss">Status:</string>
+    <string name="selinux_state_caption">SELinux:</string>
+    <string name="selinux_state_permissive">SELinux: Permissive</string>
+    <string name="selinux_state_enforcing">SELinux: Enforcing</string>
+    <string name="busybox_state_caption">Busybox Version:</string>
+    <string name="busybox_state_installedx">Busybox: Installed in /system/xbin</string>
+    <string name="busybox_state_installedb">Busybox: Installed in /system/bin</string>
+    <string name="busybox_notinstalled">Busybox: Not Installed</string>
+    <string name="set_selinux_permissive">Attempt to set SELinux to Permissive</string>
+    <string name="perfcontrol">Alliance Performance Control</string>
 </resources>

@@ -11,7 +11,6 @@
     <color name="counter_text_color">#c5c4c4</color>
     <color name="red">#bf360c</color>
     <color name="ripple_red">#ffbf5232</color>
-    <color name="material_teal">@color/material_deep_teal_500</color>
     <color name="ripple_material_teal">#ff149691</color>
     <color name="material_accent">#ff009688</color>
 
@@ -27,9 +26,7 @@
     <color name="card_background_material_light">@color/white</color>
     <color name="blue">#304f9f</color>
     <color name="grey">@color/material_blue_grey_800</color>
-    <color name="light">@color/primary_material_light</color>
 
-    <color name="colorPrimary">@color/material_deep_teal_500</color>
     <color name="colorPrimaryDark">@color/material_blue_grey_800</color>
 
     <color name="windowBackgroundColor">#333333</color>
