@@ -1,17 +1,26 @@
 package com.cheekybastards.ftw;
 
+import android.app.Dialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.ProgressDialog;
 import android.content.ComponentName;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -22,18 +31,27 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.cheekybastards.ftw.adapter.NavDrawerListAdapter;
 import com.cheekybastards.ftw.fragments.AboutFragment;
+import com.cheekybastards.ftw.fragments.BackupFragment;
 import com.cheekybastards.ftw.fragments.GeneralFragment;
 import com.cheekybastards.ftw.fragments.RootFileFragment;
 import com.cheekybastards.ftw.model.NavDrawerItem;
 import com.cheekybastards.ftw.settings.About;
 import com.cheekybastards.ftw.settings.Help;
+import com.cheekybastards.ftw.settings.InstallDialogThread;
 import com.cheekybastards.ftw.settings.Prefs;
+import com.cheekybastards.ftw.utils.ExecuteAsRootBase;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
-
+import java.util.prefs.Preferences;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -41,6 +59,125 @@ public class MainActivity extends AppCompatActivity {
     private ListView mDrawerList;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     public final String TAG = this.getClass().getSimpleName();
+    private ProgressDialog pDialog = null;
+    private InstallDialogThread installDialogThread = null;
+    final static public String PREFS_NAME = "current_theme";
+    final static public String FIRST_RUN = "first_run";String su = new String();
+    /**
+     * /**
+     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
+     */
+
+
+    /**
+     * Used to store the last screen title. For use in {@link #restoreActionBar()}.
+     */
+    private Fragment mSelectedFragment;
+    private String[] mDrawerEntries;
+    private static AlertDialog mAlertDialog;
+    private SharedPreferences mPreferences;
+    ProgressDialog mProgressDialog;
+
+    private class Startup extends AsyncTask<Void, Void, Void> {
+        private ProgressDialog pDialog = null;
+        private Context context = null;
+        private boolean suAvailable = false;
+        private Boolean rootCheck = false;
+
+        public Startup setContext(Context context) {
+            this.context = context;
+            return this;
+        }
+
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            pDialog = new ProgressDialog(MainActivity.this);
+            pDialog.setMessage("Installing Alliance Control requisites");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
+            pDialog.show();
+            pDialog.getCurrentFocus();
+            installDialogThread = new InstallDialogThread();
+            installDialogThread.packageCodePath = getPackageCodePath();
+            installDialogThread.mAppRoot = getFilesDir();
+            installDialogThread.LOGTAG = "Alliance Control";
+        }
+
+
+        @Override
+        protected Void doInBackground(Void... args) {
+            // Let's check to see if SU is there...
+            rootCheck = ExecuteAsRootBase.canRunRootCommands();
+            SharedPreferences settings = getSharedPreferences(FIRST_RUN, 0);
+            if (settings.getBoolean("accepted", true) == true) {
+                return null;
+            } else {
+
+                copyFileOrDir("cache");
+                installDialogThread.start();
+                return null;
+
+            }
+        }
+        @Override
+        protected void onPostExecute(Void result) {
+            // output
+            pDialog.dismiss();
+            if (!suAvailable) {
+                String str = "Root not available?!? Some functions may not work as intended!";
+                Toast.makeText(context, str, Toast.LENGTH_SHORT).show();
+            } else {
+                String yay = "Install succeeded";
+                Toast.makeText(context, yay, Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+
+
+
+
+    protected Dialog onCreateDialog(int id) {
+        // show disclaimer....
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.theme_prompt);
+        builder.setCancelable(false);
+        builder.setPositiveButton("Dark", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // and, if the user accept, you can execute something like this:
+                // We need an Editor object to make preference changes.
+                // All objects are from android.context.Context
+                SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                SharedPreferences.Editor editor = settings.edit();
+                editor.putString(PREFS_NAME, "2");
+                editor.putBoolean(FIRST_RUN, true);
+                editor.commit();
+            }
+        })
+                .setNegativeButton("White", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //nm.cancel(R.notification.running); // cancel the NotificationManager (icon)
+                        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                        SharedPreferences.Editor editor = settings.edit();
+                        editor.putString(PREFS_NAME, "0");
+                        editor.putBoolean(FIRST_RUN, true);
+                        editor.commit();
+
+                    }
+                });
+        SharedPreferences settings = getSharedPreferences(FIRST_RUN, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putBoolean("accepted", true);
+        editor.commit();
+        AlertDialog alert = builder.create();
+        return alert;
+    }
+
+
     // nav drawer title
     private CharSequence mDrawerTitle;
     private Toolbar toolbar;
@@ -56,7 +193,6 @@ public class MainActivity extends AppCompatActivity {
 
 	// shell defines
     String shell = new String();
-    String su = new String();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +200,23 @@ public class MainActivity extends AppCompatActivity {
 
         shell = "sh";
         su = "su";
+        mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences settings = getSharedPreferences(FIRST_RUN, 0);
+        if (settings.getBoolean("accepted", false) == false) {
+            showDialog(0);
+        } else
+        if (settings.getInt("current_theme", 0) != 0) {
 
+        }
+
+        setContentView(R.layout.main);
+        shell = "sh";
+        su = "su";
+
+        if(savedInstanceState==null) {
+            (new Startup()).setContext(this).execute();
+
+        }
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -149,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new PerformanceFragment ();
                 break;
             case 3:
-                fragment = new ItemOne ();
+                fragment = new BackupFragment ();
                 break;
             case 4:
                 fragment = new RootFileFragment ();
@@ -175,6 +327,61 @@ public class MainActivity extends AppCompatActivity {
             // error in creating fragment
             Log.e("MainActivity", "Error in creating fragment");
         }
+    }
+    private void copyFile(InputStream in, OutputStream out) throws IOException {
+        byte[] buffer = new byte[1024];
+        int read;
+        while ((read = in.read(buffer)) != -1) {
+            out.write(buffer, 0, read);
+        }
+    }
+
+
+    public void copyFileOrDir(String path) {
+        AssetManager assetManager = this.getAssets();
+        String assets[] = null;
+        try {
+            assets = assetManager.list(path);
+            if (assets.length == 0) {
+                copyFile(path);
+            } else {
+                String fullPath = "/data/data/" + this.getPackageName() + "/" + path;
+                File dir = new File(fullPath);
+                if (!dir.exists())
+                    dir.mkdir();
+                for (int i = 0; i < assets.length; ++i) {
+                    copyFileOrDir(path + "/" + assets[i]);
+                }
+            }
+        } catch (IOException ex) {
+            Log.e("tag", "I/O Exception", ex);
+        }
+    }
+
+    private void copyFile(String filename) {
+        AssetManager assetManager = this.getAssets();
+
+        InputStream in = null;
+        OutputStream out = null;
+        try {
+            in = assetManager.open(filename);
+            String newFileName = "/data/data/" + this.getPackageName() + "/" + filename;
+            out = new FileOutputStream(newFileName);
+
+            byte[] buffer = new byte[1024];
+            int read;
+            while ((read = in.read(buffer)) != -1) {
+                out.write(buffer, 0, read);
+            }
+            in.close();
+            in = null;
+            out.flush();
+            out.close();
+            out = null;
+        } catch (Exception e) {
+            Log.e("tag", e.getMessage());
+        }
+
     }
 
     @Override

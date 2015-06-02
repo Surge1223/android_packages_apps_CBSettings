@@ -37,9 +37,6 @@ public class PropEdit extends ActionBarActivity {
 	private String tempFile;
 	private String propReplaceFile;
 
-
-
-
 	public final String TAG = this.getClass().getSimpleName();
 	private Context mContext;
 	@Override

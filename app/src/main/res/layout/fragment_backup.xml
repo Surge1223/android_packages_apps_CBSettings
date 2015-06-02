@@ -1,16 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_dark" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:text="Layout 1"
-        android:textColor="@android:color/black"
-        android:textSize="20sp" />
+    <com.cheekybastards.ftw.model.PrefCategory
+        android:summary="Busybox"
+        android:title="Busybox">
+        <SwitchPreference  android:layout_gravity="left"
+            android:id="@id/menu1"
+            android:key="mInstallBusybox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/busybox"
+            android:contentDescription="@string/busybox"
+            android:summary="Install Busybox"
+            android:defaultValue="false" />
+    </com.cheekybastards.ftw.model.PrefCategory>
 
-</RelativeLayout>
+    <com.cheekybastards.ftw.model.PrefCategory
+        android:summary="Permissions"
+        android:title="Fix Permissions">
+        <SwitchPreference  android:layout_gravity="left"
+            android:id="@id/menu2"
+            android:key="mFixPerms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/perms"
+            android:contentDescription="@string/perms"
+            android:summary="Fix Permissions for device"
+            android:defaultValue="false" />
+    </com.cheekybastards.ftw.model.PrefCategory>
+
+
+    <PreferenceCategory	android:title="CPU Settings">
+        <Preference
+            android:textColor="#0099CC"
+            android:title="CPU Settings"
+            android:key="button"
+            android:id="@+id/button"
+            android:summary="Adjust CPU and system performance"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
