@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="4.0dip">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.0"
+        android:contentDescription="@string/pick_result"
+        android:paddingBottom="8.0dip"
+        android:text="@string/pick_result"
+        android:textAppearance="?android:textAppearanceMedium" />
+
+    <Button
+        android:id="@id/corky"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/corky"
+        android:text="@string/corky">
+
+        <requestFocus />
+    </Button>
+
+    <Button
+        android:id="@id/violet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/violet"
+        android:text="@string/violet" />
+</LinearLayout>

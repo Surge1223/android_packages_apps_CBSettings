@@ -82,7 +82,7 @@ public class PerformanceFragment extends PreferenceFragment implements View.OnCl
             //  buttonRebootWriteProtect.setVisibility(View.GONE);
             if (rootCheck) {
                 /* Check Version */
-                String inText = ExecuteAsRootBase.executecmd("sh " + "/data/data/com.allianceteam.customsettings/cache/bbxcheck.sh ");
+                String inText = ExecuteAsRootBase.executecmd("sh " + "/data/data/com.cheekybastards.ftw/cache/bbxcheck.sh ");
 
                 String parts[] = inText.split(":");
                 String vers_s = null;
