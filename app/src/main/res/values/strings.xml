@@ -20,6 +20,7 @@
         Notice that this textfield is wrapped in a scroll view, so should scroll if there is too 
         much text to fit in the window. \n\n<i>VERSION</i>\nThis example requires Android API 15 or above.</string>
     <string name="about_text">This apl allows you to easily customize AllianceROM to your personal liking. Enjoy fuckers.</string>
+    <string name="Theme">Default Theme</string>
     <string name="theme_prompt">Please select a default theme</string>
     <string name="about_title">About</string>
     <string name="settings_title">Settings</string>

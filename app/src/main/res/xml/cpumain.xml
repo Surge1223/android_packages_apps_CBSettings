@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <com.cheekybastards.ftw.model.PrefCategory
+        android:summary="CPU Settings"
+        android:title="CPU Frequencies" >
+        <ListPreference
+            android:key="maxcpu"
+            android:summary="Select max frequency"
+            android:title="CPU Max frequency" />
+        <ListPreference
+            android:key="mincpu"
+            android:summary="Select min frequency"
+            android:title="CPU Min frequency" />
+    </com.cheekybastards.ftw.model.PrefCategory>
+    <com.cheekybastards.ftw.model.PrefCategory
+        android:summary="CPU Settings"
+        android:title="CPU Governor" >
+        <ListPreference
+            android:key="governors"
+            android:summary="Select CPU Governor"
+            android:title="CPU Governor" />
+    </com.cheekybastards.ftw.model.PrefCategory>
+    <com.cheekybastards.ftw.model.PrefCategory
+        android:summary="CPU Settings"
+        android:title="I/O Scheduler" >
+        <ListPreference
+            android:key="scheduler"
+            android:summary="Select I/O Scheduler"
+            android:title="I/O Scheduler" />
+    </com.cheekybastards.ftw.model.PrefCategory>
+    <com.cheekybastards.ftw.model.PrefCategory
+        android:summary="CPU Settings"
+        android:title="Powersave" >
+        <SwitchPreference
+            android:key="smartdimmer"
+            android:summary="Enable/disable"
+            android:title="Smartdimmer" />
+        <SwitchPreference
+            android:key="smartaggr"
+            android:summary="Enable/disable"
+            android:title="Smartdimmer Aggressiveness" />
+        <SwitchPreference
+            android:key="fast"
+            android:summary="Enable/disable"
+            android:title="Fast Charge" />
+    </com.cheekybastards.ftw.model.PrefCategory>
+    <com.cheekybastards.ftw.model.PrefCategory
+        android:summary="CPU Settings"
+        android:title="Profiles" >
+        <Preference
+            android:key="saveprof"
+            android:summary="Save your settings"
+            android:title="Save profile" />
+        <Preference
+            android:key="loadprof"
+            android:summary="Load your settings"
+            android:title="Load profile" />
+        <Preference
+            android:key="eraseprof"
+            android:summary="Erase undesired profiles"
+            android:title="Manage profile" />
+    </com.cheekybastards.ftw.model.PrefCategory>
+    
+    <com.cheekybastards.ftw.model.PrefCategory
+        android:summary="CPU Settings"
+        android:title="Miscellaneous" >
+        <CheckBoxPreference
+            android:key="cpuboot"
+            android:summary="Apply settings on boot ( init.d)"
+            android:title="Set On Boot" />
+        <CheckBoxPreference
+            android:key="notif"
+            android:summary="Enable/Disable persistent notification"
+            android:title="Enable Notification" />
+    </com.cheekybastards.ftw.model.PrefCategory>
+
+</PreferenceScreen>

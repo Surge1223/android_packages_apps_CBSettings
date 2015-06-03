@@ -16,7 +16,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;import com.cheekybastards.ftw.CpuFragment;
+import android.widget.Toast;
+
+import com.cheekybastards.ftw.CpuFragment;
 import com.cheekybastards.ftw.R;
 import com.cheekybastards.ftw.utils.BuildPropEditor;
 import com.cheekybastards.ftw.utils.ExecuteAsRootBase;
@@ -45,6 +47,7 @@ public class PerformanceFragment extends PreferenceFragment implements View.OnCl
     SwipeRefreshLayout swipeLayout;
     String shell = new String();
     String su = new String();
+    Handler myHandler = new Handler();
     private SwipeRefreshLayout swipe_container;
     private SELinuxDialogThread SELinuxDialogThread = null;
     private InstallBusyboxDialogThread InstallBusyboxDialogThread = null;
@@ -143,6 +146,7 @@ public class PerformanceFragment extends PreferenceFragment implements View.OnCl
         } finally {
         }
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -185,8 +189,8 @@ public class PerformanceFragment extends PreferenceFragment implements View.OnCl
         buttonFixPerms.setOnClickListener(this);
         buttonBuildprop.setOnClickListener(this);
         buttonSelinuxChange.setOnClickListener(this);
-      //  restore_backup.setOnClickListener(this);
-      //  backup_button.setOnClickListener(this);
+        //  restore_backup.setOnClickListener(this);
+        //  backup_button.setOnClickListener(this);
         swipeLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_container);
         swipeLayout.setOnRefreshListener(this);
         swipeLayout.setColorScheme(android.R.color.darker_gray, android.R.color.tertiary_text_dark, android.R.color.black);

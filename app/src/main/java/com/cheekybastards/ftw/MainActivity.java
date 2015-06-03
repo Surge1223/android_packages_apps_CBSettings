@@ -15,6 +15,7 @@ import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -44,6 +45,7 @@ import com.cheekybastards.ftw.settings.Help;
 import com.cheekybastards.ftw.settings.InstallDialogThread;
 import com.cheekybastards.ftw.settings.Prefs;
 import com.cheekybastards.ftw.utils.ExecuteAsRootBase;
+import com.cheekybastards.ftw.utils.RunExec;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -51,99 +53,41 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.prefs.Preferences;
 
 
 public class MainActivity extends AppCompatActivity {
+    final static public String INITIAL_SETUP = "initial_setup";
+    final static public String PREFS_NAME = "current_theme";
+    final static public String FIRST_RUN = "first_run";
+    private static AlertDialog mAlertDialog;
+    public final String TAG = this.getClass().getSimpleName();
+    String su = new String();
+    ProgressDialog mProgressDialog;
+	// shell defines
+    String shell = new String();
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle actionBarDrawerToggle;
-    public final String TAG = this.getClass().getSimpleName();
     private ProgressDialog pDialog = null;
     private InstallDialogThread installDialogThread = null;
-    final static public String PREFS_NAME = "current_theme";
-    final static public String FIRST_RUN = "first_run";String su = new String();
-    /**
-     * /**
-     * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
-     */
-
-
-    /**
-     * Used to store the last screen title. For use in {@link #restoreActionBar()}.
-     */
     private Fragment mSelectedFragment;
     private String[] mDrawerEntries;
-    private static AlertDialog mAlertDialog;
     private SharedPreferences mPreferences;
-    ProgressDialog mProgressDialog;
+    // nav drawer title
+    private CharSequence mDrawerTitle;
+    private Toolbar toolbar;
+    // used to store app title
+    private CharSequence mTitle;
+    // slide menu items
+    private String[] navMenuTitles;
+    private TypedArray navMenuIcons;
+    private ArrayList<NavDrawerItem> navDrawerItems;
+    private NavDrawerListAdapter adapter;
 
-    private class Startup extends AsyncTask<Void, Void, Void> {
-        private ProgressDialog pDialog = null;
-        private Context context = null;
-        private boolean suAvailable = false;
-        private Boolean rootCheck = false;
-
-        public Startup setContext(Context context) {
-            this.context = context;
-            return this;
-        }
-
-
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-            pDialog = new ProgressDialog(MainActivity.this);
-            pDialog.setMessage("Installing Alliance Control requisites");
-            pDialog.setIndeterminate(false);
-            pDialog.setCancelable(false);
-            pDialog.show();
-            pDialog.getCurrentFocus();
-            installDialogThread = new InstallDialogThread();
-            installDialogThread.packageCodePath = getPackageCodePath();
-            installDialogThread.mAppRoot = getFilesDir();
-            installDialogThread.LOGTAG = "Alliance Control";
-        }
-
-
-        @Override
-        protected Void doInBackground(Void... args) {
-            // Let's check to see if SU is there...
-            rootCheck = ExecuteAsRootBase.canRunRootCommands();
-            SharedPreferences settings = getSharedPreferences(FIRST_RUN, 0);
-            if (settings.getBoolean("accepted", true) == true) {
-                return null;
-            } else {
-
-                copyFileOrDir("cache");
-                installDialogThread.start();
-                return null;
-
-            }
-        }
-        @Override
-        protected void onPostExecute(Void result) {
-            // output
-            pDialog.dismiss();
-            if (!suAvailable) {
-                String str = "Root not available?!? Some functions may not work as intended!";
-                Toast.makeText(context, str, Toast.LENGTH_SHORT).show();
-            } else {
-                String yay = "Install succeeded";
-                Toast.makeText(context, yay, Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-
-
-
-
-    protected Dialog onCreateDialog(int id) {
+        protected Dialog onCreateDialog(int id) {
         // show disclaimer....
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getString(R.string.Theme));
         builder.setMessage(R.string.theme_prompt);
         builder.setCancelable(false);
         builder.setPositiveButton("Dark", new DialogInterface.OnClickListener() {
@@ -151,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 // and, if the user accept, you can execute something like this:
                 // We need an Editor object to make preference changes.
                 // All objects are from android.context.Context
-                SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
                 SharedPreferences.Editor editor = settings.edit();
                 editor.putString(PREFS_NAME, "2");
                 editor.putBoolean(FIRST_RUN, true);
@@ -161,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 .setNegativeButton("White", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //nm.cancel(R.notification.running); // cancel the NotificationManager (icon)
-                        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
                         SharedPreferences.Editor editor = settings.edit();
                         editor.putString(PREFS_NAME, "0");
                         editor.putBoolean(FIRST_RUN, true);
@@ -169,49 +113,40 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
-        SharedPreferences settings = getSharedPreferences(FIRST_RUN, 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putBoolean("accepted", true);
-        editor.commit();
+            SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putBoolean("accepted", true);
+        editor.apply();
         AlertDialog alert = builder.create();
         return alert;
     }
 
-
-    // nav drawer title
-    private CharSequence mDrawerTitle;
-    private Toolbar toolbar;
-    // used to store app title
-    private CharSequence mTitle;
-
-    // slide menu items
-    private String[] navMenuTitles;
-    private TypedArray navMenuIcons;
-    private ArrayList<NavDrawerItem> navDrawerItems;
-    private NavDrawerListAdapter adapter;
-
-
-	// shell defines
-    String shell = new String();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+        if (settings.getBoolean("root", false) != false) {
+            shell = "su ";
+            ExecuteAsRootBase.executecmd("chmod  777 /data/data/com.cheekybastards.ftw/cache/*");
+        }
+        else {
+            shell = "sh ";
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
         shell = "sh";
         su = "su";
         mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences settings = getSharedPreferences(FIRST_RUN, 0);
         if (settings.getBoolean("accepted", false) == false) {
             showDialog(0);
         } else
-        if (settings.getInt("current_theme", 0) != 0) {
 
+
+        if(!new File("/data/data/com.cheekybastards.ftw/cache/busybox").exists()) {
+            copyFileOrDir("cache");
+            CopyAssets();
+            RunExec.Cmd(shell, "chmod -R 777 /data/data/com.cheekybastards.ftw/cache/*");
         }
-
-        setContentView(R.layout.main);
-        shell = "sh";
-        su = "su";
 
         if(savedInstanceState==null) {
             (new Startup()).setContext(this).execute();
@@ -272,19 +207,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Slide menu item click listener
-     * */
-    private class SlideMenuClickListener implements
-	ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position,
-                                long id) {
-            // display view for selected nav drawer item
-            displayView(position);
-        }
-    }
-
-    /**
      * Diplaying fragment view for selected nav drawer list item
      **/
     private void displayView(int position) {
@@ -328,61 +250,92 @@ public class MainActivity extends AppCompatActivity {
             Log.e("MainActivity", "Error in creating fragment");
         }
     }
-    private void copyFile(InputStream in, OutputStream out) throws IOException {
-        byte[] buffer = new byte[1024];
-        int read;
-        while ((read = in.read(buffer)) != -1) {
-            out.write(buffer, 0, read);
-        }
-    }
-
-
-    public void copyFileOrDir(String path) {
-        AssetManager assetManager = this.getAssets();
-        String assets[] = null;
-        try {
-            assets = assetManager.list(path);
-            if (assets.length == 0) {
-                copyFile(path);
-            } else {
-                String fullPath = "/data/data/" + this.getPackageName() + "/" + path;
-                File dir = new File(fullPath);
-                if (!dir.exists())
-                    dir.mkdir();
-                for (int i = 0; i < assets.length; ++i) {
-                    copyFileOrDir(path + "/" + assets[i]);
-                }
-            }
-        } catch (IOException ex) {
-            Log.e("tag", "I/O Exception", ex);
-        }
-    }
 
     private void copyFile(String filename) {
-        AssetManager assetManager = this.getAssets();
+                AssetManager assetManager = this.getAssets();
 
-        InputStream in = null;
-        OutputStream out = null;
-        try {
-            in = assetManager.open(filename);
-            String newFileName = "/data/data/" + this.getPackageName() + "/" + filename;
-            out = new FileOutputStream(newFileName);
+                InputStream in = null;
+                OutputStream out = null;
+                try {
+                    in = assetManager.open(filename);
+                    String newFileName = "/data/data/" + this.getPackageName() + "/" + filename;
+                    out = new FileOutputStream(newFileName);
 
+                    byte[] buffer = new byte[1024];
+                    int read;
+                    while ((read = in.read(buffer)) != -1) {
+                        out.write(buffer, 0, read);
+                    }
+                    in.close();
+                    in = null;
+                    out.flush();
+                    out.close();
+                    out = null;
+                } catch (Exception e) {
+                    Log.e("tag", e.getMessage());
+                }
+
+            }
+
+        public void copyFileOrDir(String path) {
+            AssetManager assetManager = this.getAssets();
+            String assets[] = null;
+            try {
+                assets = assetManager.list(path);
+                if (assets.length == 0) {
+                    copyFile(path);
+                } else {
+                    String fullPath = "/data/data/" + this.getPackageName() + "/" + path;
+                    File dir = new File(fullPath);
+                    if (!dir.exists())
+                        dir.mkdir();
+                    for (int i = 0; i < assets.length; ++i) {
+                        copyFileOrDir(path + "/" + assets[i]);
+                    }
+                }
+            } catch (IOException ex) {
+                Log.e("tag", "I/O Exception", ex);
+            }
+        }
+
+        private void copyFile(InputStream in, OutputStream out) throws IOException {
             byte[] buffer = new byte[1024];
             int read;
             while ((read = in.read(buffer)) != -1) {
                 out.write(buffer, 0, read);
             }
-            in.close();
-            in = null;
-            out.flush();
-            out.close();
-            out = null;
-        } catch (Exception e) {
-            Log.e("tag", e.getMessage());
         }
 
-    }
+        private void CopyAssets() {
+            AssetManager assetManager = getAssets();
+            String[] files = null;
+
+            try {
+                files = assetManager.list("cache");
+
+            } catch (IOException e) {
+                Log.e("tag", e.getMessage());
+            }
+
+            for (String filename : files) {
+                System.out.println("File name => " + filename);
+                InputStream in = null;
+                OutputStream out = null;
+                try {
+                    in = assetManager.open("cache/" + filename);   // if files resides inside the "Files" directory itself
+                    out = new FileOutputStream(Environment.getDataDirectory().toString() + "/data/com.cheekybastards.ftw/cache/" + filename);
+                    copyFile(in, out);
+                    in.close();
+                    in = null;
+                    out.flush();
+                    out.close();
+                    out = null;
+                } catch (Exception e) {
+                    Log.e("tag", e.getMessage());
+                }
+            }
+
+        }
 
     @Override
     public void onBackPressed() {
@@ -417,7 +370,6 @@ public class MainActivity extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
     }
 
-
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -433,7 +385,6 @@ public class MainActivity extends AppCompatActivity {
         showDrawerIcon.setChecked(isLauncherIconEnabled());
         return true;
     }
-
 
     /**
      * onPause is called when the activity is going to background.
@@ -453,10 +404,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.i(TAG, "onResume()");
     }
-
-    // Method to check SharedPreferences and set the current theme
-
-    /** Process clicks on the buttons */
 
     /** Method to exit application. Not essential, since the Android Back button
      * accomplishes the same task.
@@ -511,16 +458,98 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // Method to check SharedPreferences and set the current theme
+
+    /** Process clicks on the buttons */
+
+    public boolean isLauncherIconEnabled() {
+        PackageManager p = getPackageManager();
+        int componentStatus = p.getComponentEnabledSetting(new ComponentName(this, LauncherActivity.class));
+        return componentStatus != PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
+    }
+
     public void setLauncherIconEnabled(boolean enabled) {
         PackageManager p = getPackageManager();
         int newState = enabled ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED : PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
         p.setComponentEnabledSetting(new ComponentName(this, LauncherActivity.class), newState, PackageManager.DONT_KILL_APP);
     }
 
-    public boolean isLauncherIconEnabled() {
-        PackageManager p = getPackageManager();
-        int componentStatus = p.getComponentEnabledSetting(new ComponentName(this, LauncherActivity.class));
-        return componentStatus != PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
+    private class Startup extends AsyncTask<Void, Void, Void> {
+        private ProgressDialog pDialog = null;
+        private Context context = null;
+        private boolean suAvailable = false;
+        private Boolean rootCheck = false;
+
+        public Startup setContext(Context context) {
+            this.context = context;
+            return this;
+        }
+
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            pDialog = new ProgressDialog(MainActivity.this);
+            pDialog.setMessage("Installing Cheeky requisites");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
+            pDialog.show();
+            pDialog.getCurrentFocus();
+            installDialogThread = new InstallDialogThread();
+            installDialogThread.packageCodePath = getPackageCodePath();
+            installDialogThread.mAppRoot = getFilesDir();
+            installDialogThread.LOGTAG = "Cheekybastards";
+        }
+
+
+        @Override
+        protected Void doInBackground(Void... args) {
+            // Let's check to see if SU is there...
+            rootCheck = ExecuteAsRootBase.canRunRootCommands();
+            SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+            if (settings.getBoolean("accepted", true) == true) {
+                return null;
+            } else {
+                copyFileOrDir("cache");
+                CopyAssets();
+                installDialogThread.start();
+                return null;
+
+            }
+
+
+        }
+
+
+
+
+        @Override
+        protected void onPostExecute(Void result) {
+            // output
+            pDialog.dismiss();
+            if (!rootCheck) {
+                String str = "Root not available?!? Some functions may not work as intended!";
+                Toast.makeText(context, str, Toast.LENGTH_SHORT).show();
+            } else {
+                String yay = "Install succeeded";
+                Toast.makeText(context, yay, Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    /**
+     * Slide menu item click listener
+     * */
+    private class SlideMenuClickListener implements
+	ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position,
+                                long id) {
+            // display view for selected nav drawer item
+            displayView(position);
+        }
     }
 }
 

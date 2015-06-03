@@ -1,6 +1,5 @@
 package com.cheekybastards.ftw.utils;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -21,7 +20,6 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.cheekybastards.ftw.R;
-import com.cheekybastards.ftw.settings.Prefs;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -34,16 +32,16 @@ import java.util.Map;
 import java.util.Properties;
 
 public class BuildPropEditor extends ActionBarActivity  implements OnItemClickListener {
+    public final String TAG = this.getClass().getSimpleName();
     private ListView mListView;
+    private String tempFile;
+    private boolean refreshList;
+
     ListView getListView() {
         if (mListView == null) {
             mListView = (ListView) findViewById(android.R.id.list);
         }
         return mListView;
-    }
-
-    protected void setListAdapter(ListAdapter adapter) {
-        getListView().setAdapter(adapter);
     }
 
     protected ListAdapter getListAdapter() {
@@ -53,13 +51,17 @@ public class BuildPropEditor extends ActionBarActivity  implements OnItemClickLi
         } else {
             return adapter;
         }}
+
+    protected void setListAdapter(ListAdapter adapter) {
+        getListView().setAdapter(adapter);
+    }
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         // TODO Auto-generated method stub
 
     }
-    private String tempFile;
-    private boolean refreshList;
+
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -75,7 +77,6 @@ public class BuildPropEditor extends ActionBarActivity  implements OnItemClickLi
         });
     }
 
-    public final String TAG = this.getClass().getSimpleName();
  //   private Context mContext;
     @Override
     public void onCreate(Bundle savedInstanceState) {

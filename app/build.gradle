@@ -6,18 +6,19 @@ android {
 
   defaultConfig {
     applicationId "com.cheekybastards.ftw"
-    minSdkVersion 19
-    targetSdkVersion 22
-    versionCode 1
-    versionName "1.0"
+      minSdkVersion 21
+      targetSdkVersion 22
   }
+
 
 }
 
+
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.android.support:support-v4:22.2.0'
-    compile 'com.android.support:support-v13:22.2.0'
-    compile 'com.android.support:cardview-v7:22.2.0'
+    compile 'com.android.support:cardview-v7:22.1.1'
+    compile 'com.android.support:support-v4:22.1.1'
+    compile 'com.android.support:support-v13:22.1.1'
+    compile 'com.android.support:appcompat-v7:22.1.1'
 }

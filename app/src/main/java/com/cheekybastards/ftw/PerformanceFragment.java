@@ -40,9 +40,9 @@ public class PerformanceFragment extends PreferenceFragment implements View.OnCl
     public Button buttonSelinuxChange = null;
     public Button restore_backup = null;
     public Button backup_button = null;
-
     public SwitchPreference mFixPerms;
     public SharedPreferences prefs;
+    Handler myHandler = new Handler();
     SwipeRefreshLayout swipeLayout;
     String shell = new String();
     String su = new String();
@@ -70,7 +70,7 @@ public class PerformanceFragment extends PreferenceFragment implements View.OnCl
     private TextView helpTextManager;
     private TextView textView1;
 
-    protected void setupControls() {
+        protected void setupControls() {
         /* Setup button */
         //  buttonRebootWriteProtect.setVisibility(View.GONE);
                 /* Check Version */
@@ -174,7 +174,6 @@ public class PerformanceFragment extends PreferenceFragment implements View.OnCl
         view.findViewById(R.id.backup_button).setOnClickListener(this);
         view.findViewById(R.id.restore_backup).setOnClickListener(this);
         cardView2 = (CardView) view.findViewById(R.id.card_view2);
-
         buttonBuildprop = (Button) view.findViewById(R.id.buttonBuildprop);
         buttonInstallbbx = (Button) view.findViewById(R.id.buttonInstallbbx);
         buttonFixPerms = (Button) view.findViewById(R.id.buttonFixPerms);
