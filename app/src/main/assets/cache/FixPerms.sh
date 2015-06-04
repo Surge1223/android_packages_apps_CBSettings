@@ -8,7 +8,6 @@
 # original concept: http://blog.elsdoerfer.name/2009/05/25/android-fix-package-uid-mismatches/
 # implementation by: Cyanogen
 # improved by: ankn, smeat, thenefield, farmatito, rikupw, Kastro
-#
 # v1.1-v1.31r3 - many improvements and concepts from XDA developers.
 # v1.34 through v2.00 -  A lot of frustration [by Kastro]
 # v2.01	- Completely rewrote the script for SPEED, thanks for the input farmatito

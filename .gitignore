@@ -26,7 +26,7 @@ local.properties
 
 # Android Studio
 .idea/
-.gradle
+.gradle/
 /*/local.properties
 /*/out
 /*/*/build
@@ -36,7 +36,8 @@ local.properties
 *.ipr
 *~
 *.swp
-
+.gradle/2.2.1/*
+app/*.iml
 # Mac OS X clutter
 *.DS_Store
 

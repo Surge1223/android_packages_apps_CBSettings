@@ -1,3 +1,3 @@
 cat > /sdcard/Alliance/noperms << EOF
-Do not set perms
+Do not set permissions
 EOF

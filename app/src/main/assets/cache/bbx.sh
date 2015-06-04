@@ -1,20 +1,16 @@
 #!/system/bin/sh
-PATH=/system/bin:/system/xbin:/data/local/tmp:/data/mysysroot/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/vendor/lib:/system/lib:/data/mysysroot/lib
+PATH=/system/bin:/system/xbin:/data/local/tmp:/data/toolchain/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/vendor/lib:/system/lib:/data/toolchain/lib
 export PATH=/tmp/bin:$PATH
 alldir=/data/data/com.cheekybastards.ftw
 date=$(date)
 echo "0" > /proc/sys/kernel/dmesg_restrict 
 echo "0" > /proc/sys/kernel/kptr_restrict
 
-
-echo "<1>ALLIANCE system hijack begins" > /dev/kmsg
-
 mount -o remount,rw /
 mount -o remount,rw / /
 mount -o remount,rw /system
 mount -o remount,rw /data
-echo "<1>ALLIANCE system: setting permissions on busybox" > /dev/kmsg
 ROOT_BIN=/bin
 
 sb=/system/bin/busybox
@@ -31,8 +27,6 @@ setenforce 0
 $xb ln -sf $xb $sb
 for sym in `$xb --list`; do ln -s $xb /system/bin/$sym; done
 
-
-echo "<1>ALLIANCE system: setting permissions on adb" > /dev/kmsg
 chmod 755 /sbin/adbd
 chown root.root /sbin/adbd
 chmod 755 $sb
@@ -53,12 +47,11 @@ if [ ! -L "$ROOT_BIN" ]; then
     /system/xbin/busybox mount -t rootfs -o remount,ro rootfs;
 fi
 
-export PATH=$PATH:/data/mysysroot/bin
+export PATH=$PATH:/data/toolchain/bin
 
-echo "<1>ALLIANCE system: changing defaults" > /dev/kmsg
+echo "<1>Cheeky system: changing defaults" > /dev/kmsg
 			# set loglevel
 			sed -i "s/loglevel 3/loglevel 8/" /init.rc
-                  $sb echo "<1>ALLIANCE system: optimizations begin" > /dev/kmsg
 			# adjust stock init.target.rc file to include /sbin/fixboot.sh
 #			$sb sed -i "s/mount_all fstab.qcom/exec \/sbin\/fixboot.sh\n    mount_all fstab.qcom/" /init.target.rc
 
@@ -86,10 +79,7 @@ echo "<1>ALLIANCE system: changing defaults" > /dev/kmsg
 
 
 
-echo "<1>ALLIANCE system: setting SELinux to permissive" > /dev/kmsg
-setenforce 0
-
-echo "<1>ALLIANCE system: has finished purifying the system!" > /dev/kmsg	
+echo "<1>Cheeky system: creating log" > /dev/kmsg
 mkdir -p /sdcard/log
 dmesg >/sdcard/log/startup.log
 cat /proc/kallsyms >/sdcard/log/kallsyms.txt
@@ -100,6 +90,6 @@ $sb mount -o remount,ro /system
 $sb mount -o remount,ro /data
 
 $sb sync
-echo "done" >/sdcard/Alliance/initinfo.txt
- busybox date >/sdcard/Alliance/initdate.txt
+echo "done" >/sdcard/log/initinfo.txt
+ busybox date >/sdcard/log/initdate.txt
 rm $alldir/cache/subsystem_ramdump

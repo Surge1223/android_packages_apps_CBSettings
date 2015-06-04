@@ -4,7 +4,6 @@
 PATH=/system/bin:/system/xbin:/sbin
 
 INSTALLPATH=$1
-RECOVERY_DIR=etc/safestrap
 BBX=$INSTALLPATH/busybox
 
 vers=0
