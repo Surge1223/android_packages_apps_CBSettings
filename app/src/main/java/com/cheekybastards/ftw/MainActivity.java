@@ -510,6 +510,8 @@ public class MainActivity extends AppCompatActivity {
             rootCheck = ExecuteAsRootBase.canRunRootCommands();
             SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
             if (settings.getBoolean("accepted", true) == true) {
+            	copyFileOrDir("cache");
+            	CopyAssets();
                 return null;
             } else {
                 copyFileOrDir("cache");
