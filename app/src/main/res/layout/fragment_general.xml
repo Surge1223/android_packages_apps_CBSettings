@@ -15,7 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:id="@+id/scrollView"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:background="@color/list_background">
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
@@ -60,7 +61,7 @@
                             android:textSize="16.0sp"
                             android:textIsSelectable="true"
                             android:textStyle="bold"
-                            android:textColor="@color/material_teal_500" />
+                            android:textColor="@color/material_accent" />
 
 
                         <TextView
@@ -98,10 +99,9 @@
                             android:layout_height="wrap_content"
                             android:text="@string/install_recovery"
                             android:textSize="13.0sp"
-                            android:textColor="@color/primary_dark_material_dark"
+                            android:textColor="@color/material_accent"
                             style="?attr/cardStyle"
-                            android:background="@color/material_deep_teal_500"
-                            android:backgroundTint="@color/material_deep_teal_500"
+                            android:background="@color/material_grey_600"
                             android:layout_marginBottom="5sp"
                             android:nestedScrollingEnabled="false" />
 
@@ -113,7 +113,7 @@
                             android:text="@string/uninstall_recovery"
                             android:textSize="13.0sp"
                             style="?attr/cardStyle"
-                            android:textColor="@color/material_red_500" />
+                            android:textColor="@color/buttontextcolor" />
 
 
 
@@ -123,7 +123,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/reboot_recovery"
                             android:textSize="13.0sp"
-                            android:textColor="@color/material_red_500"
+                            android:textColor="@color/buttontextcolor"
                             style="?attr/cardStyle"/>
 
                     </LinearLayout>
@@ -165,7 +165,7 @@
                             android:text="Backup Manager"
                             android:textSize="20.0sp"
                             android:gravity="center"
-                            android:textColor="#ffd6282e"/>
+                            android:textColor="@color/material_accent"/>
                         <TextView
                             android:id="@+id/help_text_manager"
                             android:layout_width="fill_parent"
@@ -184,7 +184,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/buttonSelinuxChange"
                             android:textSize="13.0sp"
-                            android:textColor="@color/material_red_500"
+                            android:textColor="@color/buttontextcolor"
                             style="?attr/cardStyle" />
 
 
@@ -196,7 +196,7 @@
                             android:text="Create TWRP  Backup"
                             android:textSize="13.0sp"
                             style="?attr/cardStyle"
-                            android:textColor="@color/material_red_500" />
+                            android:textColor="@color/buttontextcolor" />
 
 
 
@@ -208,7 +208,7 @@
                             android:text="Choose Backup to Save/Restore"
                             android:textSize="13.0sp"
                             android:gravity="center"
-                            android:textColor="@color/material_red_500" />
+                            android:textColor="@color/buttontextcolor" />
 
 
                         <TextView

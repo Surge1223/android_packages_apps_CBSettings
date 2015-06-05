@@ -9,5 +9,6 @@
         android:listSelector="?attr/navselected"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:transcriptMode="alwaysScroll" />
+        android:transcriptMode="alwaysScroll"
+        android:background="@color/card_background_material_dark" />
 </LinearLayout>

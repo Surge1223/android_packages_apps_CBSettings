@@ -14,7 +14,8 @@
             android:layout_height="0dp"
             android:id="@+id/scrollView"
             android:layout_weight="1"
-            android:fillViewport="false">
+            android:fillViewport="false"
+            android:background="@color/list_background">
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
@@ -42,7 +43,7 @@
                         style="?attr/cardStyle"
                         android:padding="0dp"
                         android:layout_margin="0dp"
-                        android:background="@color/Black">
+                        android:background="@color/card_background_material_dark">
 
 
 
@@ -54,7 +55,7 @@
                             android:textStyle="bold"
 
                             android:gravity="center"
-                            android:textColor="@color/material_deep_teal_500"
+                            android:textColor="@color/material_accent"
                             android:layout_marginBottom="10sp"
                             android:textIsSelectable="false" />
 
@@ -68,7 +69,7 @@
                             android:textSize="16.0sp"
                             android:textIsSelectable="true"
                             android:textStyle="bold"
-                            android:textColor="@color/material_deep_teal_500" />
+                            android:textColor="@color/material_accent" />
 
 
                         <TextView
@@ -106,7 +107,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/installbbx"
                             android:textSize="13.0sp"
-                            android:textColor="@color/material_red_500"
+                            android:textColor="@color/buttontextcolor"
                             style="?attr/cardStyle"
                             android:clickable="true" />
 
@@ -120,7 +121,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/buildprop"
                             android:textSize="13.0sp"
-                            android:textColor="@color/material_red_500"
+                            android:textColor="@color/buttontextcolor"
                             style="?attr/cardStyle"
                             />
 
@@ -132,7 +133,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/fixperms"
                             android:textSize="13.0sp"
-                            android:textColor="@color/material_red_500"
+                            android:textColor="@color/buttontextcolor"
                             style="?attr/cardStyle"
                             />
 
@@ -147,7 +148,7 @@
                             android:id="@+id/buttonCpuSettings"
                             android:summary="Adjust CPU and system performance"
                             android:textSize="13.0sp"
-                            android:textColor="@color/material_red_500"
+                            android:textColor="@color/buttontextcolor"
                             style="?attr/cardStyle"
                             />
 
@@ -157,7 +158,7 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/buttonSelinuxChange"
                             android:textSize="13.0sp"
-                            android:textColor="@color/material_red_500"
+                            android:textColor="@color/buttontextcolor"
                             style="?attr/cardStyle" />
                     </LinearLayout>
 
@@ -189,7 +190,7 @@
                         android:layout_margin="0dp"
                         android:touchscreenBlocksFocus="true"
                         android:backgroundTintMode="src_atop"
-                        android:background="@color/Black">
+                        android:background="@color/card_background_material_dark">
 
 
 
@@ -200,7 +201,7 @@
                             android:text="Backup Manager"
                             android:textSize="20.0sp"
                             android:gravity="center"
-                            android:textColor="#ffd6282e"/>
+                            android:textColor="@color/material_accent"/>
                         <TextView
                             android:id="@+id/help_text_manager"
                             android:layout_width="fill_parent"
@@ -224,8 +225,8 @@
                             android:text="Create TWRP  Backup"
                             android:textSize="13.0sp"
                             style="?attr/cardStyle"
-                            android:background="@color/DarkGray"
-                            android:textColor="@color/material_red_500" />
+                            android:background="@color/material_grey_600"
+                            android:textColor="@color/buttontextcolor" />
 
 
 
@@ -237,9 +238,8 @@
                             android:text="Choose Backup to Save/Restore"
                             android:textSize="13.0sp"
                             android:gravity="center"
-                            android:background="@color/material_blue_grey_800"
 
-                            android:textColor="@color/material_red_500" />
+                            android:textColor="@color/buttontextcolor" />
 
 
                         <TextView

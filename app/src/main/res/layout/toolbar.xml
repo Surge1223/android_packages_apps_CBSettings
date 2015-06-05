@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:id="@+id/toolbar"
     app:popupTheme="@style/AppTheme"
-    android:background="@color/material_blue_grey_950"
+    android:background="@color/ColorPrimary"
     android:elevation="2dp"
     android:theme="@style/Base.ThemeOverlay.AppCompat.Dark" >
     <TextView

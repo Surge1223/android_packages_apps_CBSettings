@@ -36,7 +36,7 @@
 
     <PreferenceCategory	android:title="CPU Settings">
         <Preference
-            android:textColor="#0099CC"
+            android:textColor="@color/material_accent"
             android:title="CPU Settings"
             android:key="button"
             android:id="@+id/button"

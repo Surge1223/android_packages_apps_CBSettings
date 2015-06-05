@@ -3,7 +3,7 @@
     android:id="@+id/pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00000000">
+    android:background="@color/list_background">
 
     <!--
     This title strip will display the currently visible page title, as well as the page

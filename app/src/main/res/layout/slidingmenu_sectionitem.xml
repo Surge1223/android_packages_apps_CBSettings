@@ -14,5 +14,6 @@
         android:layout_width="fill_parent"
         android:layout_height="50.0dip"
         android:text="TextView"
-        android:layout_toRightOf="@id/slidingmenu_sectionitem_icon" />
+        android:layout_toRightOf="@id/slidingmenu_sectionitem_icon"
+        android:background="@color/ColorPrimary" />
 </RelativeLayout>
