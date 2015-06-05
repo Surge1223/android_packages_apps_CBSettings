@@ -19,7 +19,7 @@
     <color name="ColorPrimaryDark">#21272B</color>
     <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>
-    <color name="card_background_holo_dark">#80000000</color>
+    <color name="card_background_holo_dark">#424242</color>
     <color name="card_background_holo_light">@color/white</color>
 
     <color name="card_background_material_dark">#424242</color>
@@ -30,7 +30,7 @@
     <color name="colorPrimaryDark">#21272B</color>
 
     <color name="windowBackgroundColor">#303030</color>
-    <color name="black_translucent">#80000000</color>
+    <color name="black_translucent">#424242</color>
 	<color name="material_grey_50">#fffafafa</color>
 	<color name="material_grey_100">#fff5f5f5</color>
 	<color name="material_grey_300">#ffeeeeee</color>
@@ -78,7 +78,7 @@
 	<color name="material_green_100">#ffb7e1cd</color>
     <color name="material_primary_dark">#ffB71C1C</color>
 	<color name="transparent">#00000000</color>
-    <color name="navigation_drawer_background">#cc000000</color>
+    <color name="navigation_drawer_background">#424242</color>
 	<color name="bgcolor">#fff2eadc</color>
     <color name="bgcolor2">#ffaaaaaa</color>
     <color name="buttontextcolor">#FFF</color>
@@ -389,7 +389,7 @@
     <!-- A light Holo shade of red -->
     <color name="holo_red_light">#ffff4444</color>
     <!-- A dark Holo shade of blue -->
-    <color name="holo_blue_dark">#ff0099cc</color>
+    <color name="holo_blue_dark">#80CBC4</color>
     <!-- A dark Holo shade of green -->
     <color name="holo_green_dark">#ff669900</color>
     <!-- A dark Holo shade of red -->

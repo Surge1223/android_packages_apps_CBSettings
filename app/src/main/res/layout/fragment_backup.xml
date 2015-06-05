@@ -20,6 +20,7 @@
 
     <com.cheekybastards.ftw.model.PrefCategory
         android:summary="Permissions"
+        android:textColor="@color/material_accent"
         android:title="Fix Permissions">
         <SwitchPreference  android:layout_gravity="left"
             android:id="@id/menu2"

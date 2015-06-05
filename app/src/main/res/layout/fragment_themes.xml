@@ -10,7 +10,7 @@
         android:layout_centerInParent="true"
         android:gravity="center"
         android:text="Layout 1"
-        android:textColor="@android:color/black"
+        android:textColor="@color/white"
         android:textSize="20sp" />
 
 </RelativeLayout>
