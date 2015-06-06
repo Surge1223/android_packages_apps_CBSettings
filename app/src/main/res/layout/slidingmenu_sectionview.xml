@@ -7,7 +7,7 @@
     <TextView android:textSize="18.0sp"
         android:textColor="#ffffffff"
         android:id="@id/slidingmenu_section_title"
-        android:background="@color/ColorPrimary"
+        android:background="@color/material_blue_grey_800"
         android:paddingTop="7.0dip"
         android:paddingBottom="7.0dip"
         android:layout_width="fill_parent"

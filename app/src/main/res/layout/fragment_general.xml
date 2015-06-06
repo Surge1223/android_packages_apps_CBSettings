@@ -57,6 +57,7 @@
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:text="@string/lollipop_ss"
+                            android:layout_marginStart="10.0dip"
                             android:gravity="start"
                             android:textSize="16.0sp"
                             android:textIsSelectable="true"
@@ -70,16 +71,18 @@
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:text="@string/versionstatus"
+                            android:layout_marginStart="10.0dip"
                             android:textSize="13.0sp"
-                            android:gravity="left" />
+                            android:gravity="start" />
 
                         <TextView
                             android:id="@+id/textSystemStatus"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/recovery_state_not_installed"
+                            android:layout_marginStart="10.0dip"
                             android:textSize="13.0sp"
-                            android:gravity="left" />
+                            android:gravity="start" />
 
                         <TextView
                             android:textAppearance="?android:attr/textAppearanceSmall"
@@ -87,8 +90,9 @@
                             android:layout_height="wrap_content"
                             android:textSize="13.0sp"
                             android:text="@string/selinux_state_enforcing"
+                            android:layout_marginStart="10.0dip"
                             android:id="@+id/textSelinuxStatus"
-                            android:gravity="left"
+                            android:gravity="start"
                             android:layout_marginBottom="15sp" />
 
 
@@ -99,7 +103,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/install_recovery"
                             android:textSize="13.0sp"
-                            android:textColor="@color/material_accent"
+                            android:textColor="@color/white"
                             style="?attr/cardStyle"
                             android:layout_marginBottom="5sp"
                             android:nestedScrollingEnabled="false" />

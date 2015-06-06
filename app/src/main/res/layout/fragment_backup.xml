@@ -5,6 +5,7 @@
 
     <com.cheekybastards.ftw.model.PrefCategory
         android:summary="Busybox"
+        android:textColor="@color/material_accent"
         android:title="Busybox">
         <SwitchPreference  android:layout_gravity="left"
             android:id="@id/menu1"

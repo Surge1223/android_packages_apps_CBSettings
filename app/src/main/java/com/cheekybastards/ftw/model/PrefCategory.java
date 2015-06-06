@@ -29,6 +29,6 @@ public class PrefCategory extends PreferenceCategory {
     protected void onBindView(View view) {
         super.onBindView(view);
         TextView titleView = (TextView) view.findViewById(android.R.id.title);
-        titleView.setTextColor(Color.parseColor("#0099CC"));
+        titleView.setTextColor(Color.parseColor("#80CBC4"));
     }
 }
