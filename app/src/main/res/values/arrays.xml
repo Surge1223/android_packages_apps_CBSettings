@@ -31,6 +31,10 @@
 <string-array name="labels_list_preference">
         <item>Custom Holo Dark</item>
         <item>Custom Holo Light</item>
+        <item>Grey</item>
+        <item>Dark Blue</item>
+        <item>Onyx</item>
+
     </string-array>
     
     <string-array name="values_list_preference">
@@ -48,4 +52,19 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+
+    <string-array name="fileview">
+        <item>Files first</item>
+        <item>Folders First</item>
+        <item>Alphabetical</item>
+        <item>Chronological</item>
+    </string-array>
+
+    <string-array name="busybox_versions">
+        <item>1.23 Bionic Static</item>
+        <item>1.23 Bionic Linked</item>
+        <item>Other</item>
+        <item>None</item>
+    </string-array>
+
 </resources>

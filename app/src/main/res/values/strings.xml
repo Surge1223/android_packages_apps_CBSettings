@@ -445,4 +445,25 @@
     <!-- End Backup Fragment Main -->
 
 
+    <!-- Begin Settings Preferences Main -->
+    <string name="vibration">Vibration</string>
+    <string name="vibration_on">Vibration on</string>
+    <string name="vibration_off">Vibration off</string>
+    <string name="notify_on">Notification on</string>
+    <string name="notify_off">Notification off</string>
+    <string name="notify">Notifications</string>
+    <string name="screen_on">Keep screen on</string>
+    <string name="screen">Screen on</string>
+    <string name="screen_off">Dont keep screen on</string>
+    <string name="wrap_msg_on">Wrap output message</string>
+    <string name="wrap_msg_off">Dont wrap output message</string>
+    <string name="themes">App Theme</string>
+    <string name="busybox_version">Busybox version</string>
+    <string name="exit">Exit Menu</string>
+    <string name="show_exit">Show Exit button</string>
+    <string name="hide_exit">Hide Exit button</string>
+    <string name="wrap_msg">Wrap output message</string>
+    <string name="have_root">Use root perms</string>
+    <string name="no_root">Dont use root perms</string>
+    <!-- End Settings Preferences Main -->
 </resources>

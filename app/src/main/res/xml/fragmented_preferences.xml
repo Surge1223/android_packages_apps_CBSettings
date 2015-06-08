@@ -1,10 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <PreferenceCategory android:title="Application Preferences" >
-        <CheckBoxPreference
-            android:key="caps_pref"
-            android:summary="Example Text"
-            android:title="Type" />
 
         <ListPreference
             android:dialogTitle="Theme"
@@ -14,5 +11,93 @@
             android:summary="Set theme preference"
             android:title="Theme Preference" />
     </PreferenceCategory>
+
+
+    <com.cheekybastards.ftw.model.PrefCategory
+        android:summary="Vibration"
+        android:title="Vibration">
+        <SwitchPreference  android:layout_gravity="left"
+            android:key="vibration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:summaryOff="@string/vibration_off"
+            android:summaryOn="@string/vibration_on"
+            android:text="@string/vibration"
+            android:summary="Use Vibration"
+            android:defaultValue="false" />
+    </com.cheekybastards.ftw.model.PrefCategory>
+
+    <com.cheekybastards.ftw.model.PrefCategory
+        android:summary="Notifications"
+        android:title="Notifications">
+    <SwitchPreference  android:layout_gravity="left"
+        android:defaultValue="false"
+        android:enabled="true"
+        android:key="notify"
+        android:summaryOff="@string/notify_off"
+        android:summaryOn="@string/notify_on"
+        android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/notify"
+            android:summary="App Notifications" />
+    </com.cheekybastards.ftw.model.PrefCategory>
+
+
+    <com.cheekybastards.ftw.model.PrefCategory
+        android:summary="Screen"
+        android:title="Screen Preferences">
+        <SwitchPreference  android:layout_gravity="left"
+            android:defaultValue="false"
+            android:enabled="true"
+            android:key="screen"
+            android:summaryOff="@string/screen_off"
+            android:summaryOn="@string/screen_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/screen"
+            android:summary="Screen" />
+    </com.cheekybastards.ftw.model.PrefCategory>
+
+<CheckBoxPreference
+    android:defaultValue="true"
+    android:enabled="true"
+    android:key="wrap_msg"
+    android:summaryOff="@string/wrap_msg_off"
+    android:summaryOn="@string/wrap_msg_on"
+    android:title="Verbose Output" />
+<ListPreference
+    android:defaultValue="true"
+    android:enabled="true"
+    android:key="fileview"
+    android:entries="@array/fileview"
+    android:entryValues="@array/fileview"
+    android:title="File View" />
+<ListPreference
+    android:defaultValue="2.0"
+    android:enabled="true"
+    android:entries="@array/busybox_versions"
+    android:entryValues="@array/busybox_versions"
+    android:key="Busybox_version"
+    android:title="@string/busybox_version" />
+
+
+<CheckBoxPreference
+    android:defaultValue="false"
+    android:enabled="true"
+    android:key="root"
+    android:summaryOff="@string/no_root"
+    android:summaryOn="@string/have_root"
+    android:title="Root" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:enabled="true"
+        android:key="exit"
+        android:summaryOff="@string/hide_exit"
+        android:summaryOn="@string/show_exit"
+        android:title="Exit" />
+
 
 </PreferenceScreen>

@@ -17,7 +17,7 @@
         android:title="CheekyBastards GitHub" >
         <intent
             android:action="android.intent.action.VIEW"
-            android:data="http://www.github.com" />
+            android:data="https://github.com/CheekyBastards" />
     </header>
     <header
         android:icon="@drawable/ic_launcher"
