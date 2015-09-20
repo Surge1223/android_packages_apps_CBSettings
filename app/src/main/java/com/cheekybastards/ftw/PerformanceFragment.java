@@ -315,7 +315,7 @@ public class PerformanceFragment extends PreferenceFragment implements View.OnCl
                         pDialog.show();
                         pDialog.getCurrentFocus();
                         SELinuxDialogThread = new SELinuxDialogThread();
-                        SELinuxDialogThread.LOGTAG = "Alliance Control";
+                        SELinuxDialogThread.LOGTAG = "Performance Control";
                         SELinuxDialogThread.handler = new Handler() {
                             @Override
                             public void handleMessage(Message msg) {

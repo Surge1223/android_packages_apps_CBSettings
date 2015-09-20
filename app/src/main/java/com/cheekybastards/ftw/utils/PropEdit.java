@@ -27,8 +27,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.Properties;
+import android.support.v7.app.*;
 
-public class PropEdit extends ActionBarActivity {
+public class PropEdit extends AppCompatActivity {
 
 	private EditText editName;
 	private EditText editKey;
@@ -36,8 +37,9 @@ public class PropEdit extends ActionBarActivity {
 	private AlertDialog unsavedChangesDialog;
 	private String tempFile;
 	private String propReplaceFile;
-
 	public final String TAG = this.getClass().getSimpleName();
+    private boolean refreshList;
+	private Toolbar toolbar;
 	private Context mContext;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

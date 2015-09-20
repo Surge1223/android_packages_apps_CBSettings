@@ -8,11 +8,11 @@
         <item>Root File Explorer</item>
     </string-array>
     <string-array name="navigation_drawer_icons">
-        <item>@drawable/ic_launcher</item>
-        <item>@drawable/ic_launcher</item>
-        <item>@drawable/ic_launcher</item>
-        <item>@drawable/ic_launcher</item>
-        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_about</item>
+        <item>@drawable/ic_general</item>
+        <item>@drawable/ic_perm</item>
+        <item>@drawable/ic_tmp</item>
+        <item>@drawable/ic_tmp</item>
     </string-array>
     <string-array name="nav_drawer_items">
         <item>About</item>
@@ -22,13 +22,13 @@
         <item>Root File Explorer</item>
     </string-array>
     <array name="nav_drawer_icons">
-        <item>@drawable/ic_launcher</item>
-        <item>@drawable/ic_launcher</item>
-        <item>@drawable/ic_launcher</item>
-        <item>@drawable/ic_launcher</item>
-        <item>@drawable/ic_launcher</item>
+        <item>@drawable/ic_about</item>
+        <item>@drawable/ic_general</item>
+        <item>@drawable/ic_perm</item>
+		<item>@drawable/ic_tmp</item>
+        <item>@drawable/ic_tmp</item>
     </array>
-<string-array name="labels_list_preference">
+<string-array name="themes">
         <item>Custom Holo Dark</item>
         <item>Custom Holo Light</item>
         <item>Grey</item>
@@ -37,7 +37,7 @@
 
     </string-array>
     
-    <string-array name="values_list_preference">
+    <string-array name="theme_values">
         <item>1</item>
         <item>2</item>
     </string-array>
@@ -66,5 +66,62 @@
         <item>Other</item>
         <item>None</item>
     </string-array>
+  <string-array name="auto_answer_entries">
+      <item>5 seconds</item>
+      <item>10 seconds</item>
+      <item>15 seconds</item>
+      <item>Disable Auto Answer</item>
+   </string-array>
+
+   <string-array name="auto_answer_values">
+      <item>5000</item>
+      <item>10000</item>
+      <item>15000</item>
+      <item>-1</item>
+   </string-array>
+
+   <!-- USB composition settings -->
+   <string-array name="usb_composition_entries">
+      <item>DIAG + MODEM + NMEA + MSC</item>
+      <item>MASS_STORAGE</item>
+      <item>MODEM</item>
+      <item>DIAG</item>
+      <item>DIAG + MODEM</item>
+      <item>DIAG + MODEM + NMEA</item>
+      <item>DIAG + QMI_RMNET</item>
+      <item>MASS_STORAGE + CDC/ECM</item>
+      <item>RNDIS</item>
+   </string-array>
+
+   <string-array name="usb_composition_values">
+      <item>9017</item>
+      <item>F000</item>
+      <item>F00B</item>
+      <item>900E</item>
+      <item>9004</item>
+      <item>9016</item>
+      <item>9021</item>
+      <item>9014</item>
+      <item>F00E</item>
+   </string-array>
+
+   <!-- USB OTG mode values -->
+   <string-array name="usb_otg_mode_values">
+      <item>none</item>
+      <item>peripheral</item>
+   </string-array>
+   
+   <!-- Fluence mode -->
+   <string-array name="fluence_values">
+      <item>none</item>
+      <item>dualmic</item>
+      <item>quadmic</item>
+   </string-array>
+
+   <!-- IMS Registration values -->
+   <string-array translatable="false" name="ims_registration_states">
+      <item>Registered</item>
+      <item>Deregistered</item>
+   </string-array>
 
 </resources>

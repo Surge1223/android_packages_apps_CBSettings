@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+*@file settings_preferences.xml
+*@brief Lists of preferences used in the qualcommSettings UI.
+*Copyright (c) 2009-2011,2013 Qualcomm Technologies, Inc.
+*All Rights Reserved. Qualcomm Technologies Proprietary and Confidential.
+-->
+
+<PreferenceScreen
+   xmlns:android="http://schemas.android.com/apk/res/android">
+
+   <PreferenceCategory
+      android:key="qualcomm_settings"
+      android:title="@string/QualcommSettings">
+
+      <CheckBoxPreference
+         android:key="dim_screen"
+         android:title="@string/dim_screen_title"
+         android:summary="@string/dim_screen_summary"
+         android:defaultValue="false"
+         />
+
+      <CheckBoxPreference
+         android:key="diag_log"
+         android:title="@string/diag_title"
+         android:summary="@string/diag_summary"
+         android:defaultValue="false"
+         />
+
+      <CheckBoxPreference
+         android:key="stay_on"
+         android:title="@string/stay_on_plugged_title"
+         android:summary="@string/stay_on_plugged_summary"
+         android:defaultValue="true"
+         />
+
+      <CheckBoxPreference
+         android:key="usb_mass_storage"
+         android:title="@string/usb_mass_storage_title"
+         android:summary="@string/usb_mass_storage_summary"
+         android:defaultValue="false"
+         />
+
+      <CheckBoxPreference
+         android:key="usb_remote_wakeup"
+         android:title="@string/usb_remote_wakeup_title"
+         android:summary="@string/usb_remote_wakeup_summary"
+         android:defaultValue="false"
+         />
+
+      <CheckBoxPreference
+         android:key="sd_polling"
+         android:title="@string/sd_poll_title"
+         android:summary="@string/sd_poll_summary"
+         android:defaultValue="true"
+         />
+
+      <CheckBoxPreference
+         android:key="dualmic"
+         android:title="@string/dualmic_title"
+         android:summary="@string/dualmic_summary"
+         android:defaultValue="false"
+         />
+
+       <CheckBoxPreference
+         android:key="anc"
+         android:title="@string/anc_title"
+         android:summary="@string/anc_summary"
+         android:defaultValue="false"
+         />
+
+      <CheckBoxPreference
+        android:key="sensors"
+        android:title="@string/sensors_title"
+        android:summary="@string/sensors_summary"
+        android:defaultValue="true"
+        />
+
+       <CheckBoxPreference
+         android:key="incallmusic"
+         android:title="@string/incallmusic_title"
+         android:summary="@string/incallmusic_summary"
+         android:defaultValue="false"
+         />
+
+      <CheckBoxPreference
+         android:key="usb_hub"
+         android:title="@string/usb_hub_title"
+         android:summary="@string/usb_hub_summary"
+         android:defaultValue="false"
+         />
+
+      <ListPreference
+        android:dialogTitle="@string/ims_reg_title"
+        android:entries="@array/ims_registration_states"
+        android:entryValues="@array/ims_registration_states"
+        android:key="ims_registration"
+        android:persistent="false"
+        android:summary="@string/default_ims_reg_state"
+        android:title="@string/ims_reg_title" />
+
+      <ListPreference
+         android:key="auto_answer_voice_call"
+         android:title="@string/auto_answer_title"
+         android:summary="@string/auto_answer_summary"
+         android:entries="@array/auto_answer_entries"
+         android:entryValues="@array/auto_answer_values"
+         android:defaultValue="@string/auto_answer_default"
+         />
+
+      <ListPreference
+         android:key="fluence"
+         android:title="@string/fluence_title"
+         android:summary="@string/fluence_summary"
+         android:entries="@array/fluence_values"
+         android:entryValues="@array/fluence_values"
+         android:defaultValue="@string/fluence_default"
+         />
+
+      <EditTextPreference android:key="go_dormant"
+         android:title="@string/go_dormant_title"
+         android:summary="@string/go_dormant_summary"
+         android:dialogTitle="@string/go_dormant_title"
+         android:editable="true" />
+
+      <ListPreference
+         android:key="usb_composition"
+         android:title="@string/usb_composition_title"
+         android:summary="@string/usb_composition_summary"
+         android:entries="@array/usb_composition_entries"
+         android:entryValues="@array/usb_composition_values"
+         android:defaultValue="@string/usb_composition_default"
+         />
+
+     <Preference
+         android:key="cabl_settings"
+         android:title="@string/cabl_settings_title"
+         android:summary="@string/cabl_settings_summary"
+         />
+
+     <Preference
+         android:key="svi_settings"
+         android:title="@string/svi_settings_title"
+         android:summary="@string/svi_settings_summary"
+         />
+
+     <Preference
+         android:key="ad_settings"
+         android:title="@string/ad_settings_title"
+         android:summary="@string/ad_settings_summary"
+         />
+
+     <Preference
+         android:key="pp_settings"
+         android:title="@string/pp_settings_title"
+         android:summary="@string/pp_settings_summary"
+         />
+
+      <ListPreference
+         android:key="usb_otg_mode"
+         android:title="@string/usb_otg_mode_title"
+         android:summary="@string/usb_otg_mode_summary"
+         android:entries="@array/usb_otg_mode_values"
+         android:entryValues="@array/usb_otg_mode_values"
+         android:defaultValue="@string/usb_otg_mode_default"
+         />
+
+      <Preference
+         android:key="data_usage"
+         android:title="@string/data_usage_title"
+         android:summary="@string/data_usage_summary"
+         />
+
+     <CheckBoxPreference
+        android:key="data_monitor"
+        android:title="@string/data_monitor_title"
+        android:summary="@string/data_monitor_summary"
+        android:defaultValue="true"
+         />
+
+     <CheckBoxPreference
+        android:key="gestures_touch_injection"
+        android:title="@string/touch_injection_title"
+        android:summary="@string/touch_injection_summary"
+        android:defaultValue="false"
+	/>
+	 
+	   
+      <Preference
+        android:key="set_cdma_sub_src"
+        android:title="@string/set_cdma_sub_src_title"
+        android:summary="@string/set_cdma_sub_src_summary"
+    />
+      <PreferenceScreen
+        android:key="cdma_nwk_avoidance"
+        android:title="@string/cdma_nwk_avoidance_title"
+        android:summary="@string/cdma_nwk_avoidance_summary">
+
+        <!-- Intent to launch the CdmaNwkAvoidance-->
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.cheekybastards.ftw"
+            android:targetClass="com.cheekybastards.ftw.fragment.RootFileFragment" />
+      </PreferenceScreen>
+   </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/storage_device_settings_title">
+        <PreferenceScreen
+            android:key="file_manager"
+            android:title="@string/view_storage_title"
+            android:summary="@string/view_storage_summary">
+            <PreferenceCategory android:title="@string/file_browser_packages_list"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+	<PreferenceCategory android:title="Application Preferences" >
+
+        <ListPreference
+            android:dialogTitle="Theme"
+            android:entries="@array/themes"
+            android:entryValues="@array/theme_values"
+            android:key="theme"
+            android:summary="Set theme preference"
+            android:title="Theme Preference" />
+    </PreferenceCategory>
+
+
+    <com.cheekybastards.ftw.model.PrefCategory
+        android:summary="Vibration"
+        android:title="Vibration">
+        <SwitchPreference  android:layout_gravity="left"
+            android:key="vibration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:summaryOff="@string/vibration_off"
+            android:summaryOn="@string/vibration_on"
+            android:text="@string/vibration"
+            android:summary="Use Vibration"
+            android:defaultValue="false" />
+    </com.cheekybastards.ftw.model.PrefCategory>
+
+    <com.cheekybastards.ftw.model.PrefCategory
+        android:summary="Notifications"
+        android:title="Notifications">
+		<SwitchPreference  android:layout_gravity="left"
+			android:defaultValue="false"
+			android:enabled="true"
+			android:key="notify"
+			android:summaryOff="@string/notify_off"
+			android:summaryOn="@string/notify_on"
+			android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/notify"
+            android:summary="App Notifications" />
+    </com.cheekybastards.ftw.model.PrefCategory>
+
+
+    <com.cheekybastards.ftw.model.PrefCategory
+        android:summary="Screen"
+        android:title="Screen Preferences">
+        <SwitchPreference  android:layout_gravity="left"
+            android:defaultValue="false"
+            android:enabled="true"
+            android:key="screen"
+            android:summaryOff="@string/screen_off"
+            android:summaryOn="@string/screen_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/screen"
+            android:summary="Screen" />
+    </com.cheekybastards.ftw.model.PrefCategory>
+
+	<CheckBoxPreference
+		android:defaultValue="true"
+		android:enabled="true"
+		android:key="wrap_msg"
+		android:summaryOff="@string/wrap_msg_off"
+		android:summaryOn="@string/wrap_msg_on"
+		android:title="Verbose Output" />
+	<ListPreference
+		android:defaultValue="true"
+		android:enabled="true"
+		android:key="fileview"
+		android:entries="@array/fileview"
+		android:entryValues="@array/fileview"
+		android:title="File View" />
+	<ListPreference
+		android:defaultValue="2.0"
+		android:enabled="true"
+		android:entries="@array/busybox_versions"
+		android:entryValues="@array/busybox_versions"
+		android:key="Busybox_version"
+		android:title="@string/busybox_version" />
+
+
+	<CheckBoxPreference
+		android:defaultValue="false"
+		android:enabled="true"
+		android:key="root"
+		android:summaryOff="@string/no_root"
+		android:summaryOn="@string/have_root"
+		android:title="Root" />
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:enabled="true"
+        android:key="exit"
+        android:summaryOff="@string/hide_exit"
+        android:summaryOn="@string/show_exit"
+        android:title="Exit" />
+	
+</PreferenceScreen> 

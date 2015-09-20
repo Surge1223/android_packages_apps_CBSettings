@@ -18,7 +18,7 @@ import com.cheekybastards.ftw.R;
 public class TaskActivity1 extends Activity {
 
 	private int currentTheme;
-	private boolean isLight;
+	private boolean dark;
 
 	/** onCreate is called when the activity is first created. */
 
@@ -30,7 +30,7 @@ public class TaskActivity1 extends Activity {
 
 		toggleTheme();
 
-		setContentView(R.layout.taskactivity1);  
+		setContentView(R.layout.main);  
 	}
 
 	/** onPause is called when the activity is going to background. */
@@ -54,19 +54,19 @@ public class TaskActivity1 extends Activity {
 		// Following options to change the Theme must precede setContentView().
 
 		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-		String lister = sharedPref.getString("list_preference", "1");
+		String lister = sharedPref.getString("theme", "1");
 
 		currentTheme = Integer.parseInt(lister);
 		if(currentTheme == 2){
-			isLight = false;
+			dark = false;
 		} else {
-			isLight = true;
+			dark = true;
 		}
 
-		if(isLight) {
-			setTheme(R.style.HoloLightCustom);
+		if(dark) {
+			setTheme(R.style.AppTheme);
 		} else {
-			setTheme(R.style.HoloCustom);
+			setTheme(R.style.AppTheme_Light);
 		} 
 	}
 }

@@ -5,9 +5,9 @@
 
         <ListPreference
             android:dialogTitle="Theme"
-            android:entries="@array/labels_list_preference"
-            android:entryValues="@array/values_list_preference"
-            android:key="list_preference"
+            android:entries="@array/themes"
+            android:entryValues="@array/theme_values"
+            android:key="theme"
             android:summary="Set theme preference"
             android:title="Theme Preference" />
     </PreferenceCategory>
@@ -80,7 +80,7 @@
     android:enabled="true"
     android:entries="@array/busybox_versions"
     android:entryValues="@array/busybox_versions"
-    android:key="Busybox_version"
+    android:key="busybox"
     android:title="@string/busybox_version" />
 
 

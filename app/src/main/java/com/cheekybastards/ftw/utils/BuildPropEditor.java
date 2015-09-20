@@ -30,12 +30,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import android.support.v7.app.*;
+import android.support.v7.internal.widget.ActionBarOverlayLayout;
 
-public class BuildPropEditor extends ActionBarActivity  implements OnItemClickListener {
+
+
+public class BuildPropEditor extends AppCompatActivity  implements OnItemClickListener {
     public final String TAG = this.getClass().getSimpleName();
     private ListView mListView;
     private String tempFile;
     private boolean refreshList;
+
+	private Toolbar toolbar;
 
     ListView getListView() {
         if (mListView == null) {
@@ -208,7 +214,7 @@ public class BuildPropEditor extends ActionBarActivity  implements OnItemClickLi
             process = Runtime.getRuntime().exec("su");
 	        os = new DataOutputStream(process.getOutputStream());
 	        os.writeBytes("mount -o remount,rw  /system\n");
-	        os.writeBytes("cp -f /system/build.prop " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/Alliance/build.prop.bak\n");
+	        os.writeBytes("cp -f /system/build.prop " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/build.prop.bak\n");
 	        os.writeBytes("exit\n");
 	        os.flush();
 	        process.waitFor();
@@ -225,7 +231,7 @@ public class BuildPropEditor extends ActionBarActivity  implements OnItemClickLi
             }
         }
 
-    	Toast.makeText(getApplicationContext(), "build.prop Backup at " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/Alliance/build.prop.bak", Toast.LENGTH_SHORT).show();
+    	Toast.makeText(getApplicationContext(), "build.prop Backup at " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/build.prop.bak", Toast.LENGTH_SHORT).show();
     }
 
     private void restore() {
@@ -237,7 +243,7 @@ public class BuildPropEditor extends ActionBarActivity  implements OnItemClickLi
 	        os = new DataOutputStream(process.getOutputStream());
 	        os.writeBytes("mount -o remount,rw  /system\n");
 	        os.writeBytes("mv -f /system/build.prop /system/build.prop.bak\n");
-	        os.writeBytes("busybox cp -f " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/Alliance/build.prop.bak /system/build.prop\n");
+	        os.writeBytes("busybox cp -f " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/build.prop.bak /system/build.prop\n");
 	        os.writeBytes("chmod 644 /system/build.prop\n");
 	        //os.writeBytes("mount -o remount,ro -t yaffs2 /dev/block/mtdblock4 /system\n");
 	        os.writeBytes("exit\n");
@@ -256,7 +262,7 @@ public class BuildPropEditor extends ActionBarActivity  implements OnItemClickLi
             }
         }
 
-    	Toast.makeText(getApplicationContext(), "build.prop Restored from " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/Alliance/build.prop.bak", Toast.LENGTH_SHORT).show();
+    	Toast.makeText(getApplicationContext(), "build.prop Restored from " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/build.prop.bak", Toast.LENGTH_SHORT).show();
     }
 
     private void createTempFile() {
@@ -267,8 +273,8 @@ public class BuildPropEditor extends ActionBarActivity  implements OnItemClickLi
             process = Runtime.getRuntime().exec("su");
 	        os = new DataOutputStream(process.getOutputStream());
 	        os.writeBytes("mount -o remount,rw  /system\n");
-	        os.writeBytes("cp -f /system/build.prop " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/Alliance/build.prop.tmp\n");
-	        os.writeBytes("chmod 777 " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/Alliance/build.prop.tmp\n");
+	        os.writeBytes("cp -f /system/build.prop " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/build.prop.tmp\n");
+	        os.writeBytes("chmod 777 " + Environment.getExternalStorageDirectory().getAbsolutePath() + "/build.prop.tmp\n");
 	        os.writeBytes("exit\n");
 	        os.flush();
 	        process.waitFor();
@@ -285,7 +291,7 @@ public class BuildPropEditor extends ActionBarActivity  implements OnItemClickLi
             }
         }
 
-        tempFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Alliance/build.prop.tmp";
+        tempFile = Environment.getExternalStorageDirectory().getAbsolutePath() + "/build.prop.tmp";
     }
 
     public boolean runRootCommand(String command) {

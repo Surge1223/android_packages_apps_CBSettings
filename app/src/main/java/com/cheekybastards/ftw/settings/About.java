@@ -38,7 +38,7 @@ public class About extends Activity {
 		// Following options to change the Theme must precede setContentView().
 
 		SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-		String lister = sharedPref.getString("list_preference", "1");
+		String lister = sharedPref.getString("theme", "1");
 
 		currentTheme = Integer.parseInt(lister);
 		if(currentTheme == 2){

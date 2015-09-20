@@ -54,13 +54,13 @@ public class BackupFragment extends PreferenceFragment implements OnPreferenceCl
         if(preference == mInstallBusybox) {
             boolean value = mInstallBusybox.isChecked();
             if(value ==true) {
-                mInstallBusybox.setSummary("Install Alliance Busybox");
+                mInstallBusybox.setSummary("Install Busybox");
                 RunExec.Cmd(su, "/data/data/com.cheekybastards.ftw/cache/bbx.sh");}
             System.out.println("Installing Busybox");
             if(value==false) {
                 mInstallBusybox.setSummary("Do not install Busybox");
                 RunExec.Cmd(shell, "/data/data/com.cheekybastards.ftw/cache/test.sh");}
-            System.out.println("Executing Alliance test check");
+            System.out.println("Executing test check");
 
         }
         if(preference == mFixPerms) {

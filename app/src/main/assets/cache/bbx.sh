@@ -37,8 +37,8 @@ chown root.root /sbin/adbd
 chmod 755 /system/lib/modules
 chmod 644 /system/lib/modules/*.ko
 
-mkdir -p /sdcard/Alliance
-cp -R $alldir/ /sdcard/Alliance/
+mkdir -p /sdcard/PureNexus
+cp -R $alldir/ /sdcard/PureNexus/
 
 SYSROOT=/data/mysysroot
 if [ ! -L "$ROOT_BIN" ]; then

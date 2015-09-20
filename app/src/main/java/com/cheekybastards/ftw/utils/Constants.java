@@ -21,7 +21,14 @@ public interface Constants {
     public static final String GOV_NAME = "gov_name";
     public static final String TIME_IN_STATE = "/sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state";
     public static final String PREF_OFFSETS = "pref_offsets";
-    
+    public static final String CPU_SCALING0 = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor";
+	public static final String CPU_SCALING1 = "/sys/devices/system/cpu/cpu1/cpufreq/scaling_governor";
+	public static final String CPU_SCALING2 = "/sys/devices/system/cpu/cpu2/cpufreq/scaling_governor";
+	public static final String CPU_SCALING3 = "/sys/devices/system/cpu/cpu3/cpufreq/scaling_governor";
+	public static final String CPU_VOLTAGE = "/sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table";
+	public static final String SD_SCHED = "/sys/block/mmcblk0/queue/scheduler";
+	public static final String SD_READAHEAD = "/sys/block/mmcblk0/queue/read_ahead_kb";
+	public static final String SD_READAHEAD2 = "/sys/devices/virtual/bdi/179:0/read_ahead_kb";
     // Charger and Battery Constants
     public static final String BAT_VOLTAGE = "/sys/class/power_supply/battery/voltage_now";
     public static final String FAST_CHARGE = "/sys/kernel/fast_charge/force_fast_charge";
